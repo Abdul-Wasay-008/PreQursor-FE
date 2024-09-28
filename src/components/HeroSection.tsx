@@ -3,78 +3,133 @@ import Slider from "react-slick";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 const HeroSection: React.FC = () => {
     const settings = {
-        dots: false, // Enable dots navigation
-        infinite: true, // Loop through images
-        speed: 800, // Transition speed
-        slidesToShow: 1, // Show one slide at a time
-        slidesToScroll: 1, // Scroll one slide at a time
-        autoplay: true, // Enable autoplay
-        autoplaySpeed: 3000, // Autoplay speed in ms
-        fade: true // Fade effect for transition
+        dots: false,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        fade: true
     };
 
     return (
-        <div className="relative w-full h-screen font-poppins">
+        <div className="relative w-full h-screen font-poppins overflow-hidden" style={{ height: "85vh" }}>
             <Slider {...settings}>
                 {/* First Image */}
                 <div>
-                    <div className="relative w-full h-screen">
+                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
                         <img
                             src="/images/cod2.jpeg"
                             alt="Call of Duty"
-                            className="w-full h-full object-cover"
-                            style={{ height: "85vh" }}
+                            className="w-full h-full object-cover md:h-[165vh] "
                         />
-                        <div className="absolute inset-0 bg-black opacity-75" style={{ height: '85vh' }}></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-36"> {/* Adjust this value */}
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">Welcome to <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">PreQursor</span></h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">A Unified Platform for Managing E-Sports Matches</p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">Let's get started!</p>
-                            <button data-aos="fade-left" className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"><FontAwesomeIcon icon={faUser} className="mr-2" />Login</button>
-                            <button data-aos="fade-right" className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered">How it Works</button>
+                        <div className="absolute inset-0 bg-black opacity-75"></div>
+                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                Welcome to{" "}
+                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                    PreQursor
+                                </span>
+                            </h1>
+                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                A Unified Platform for Managing E-Sports Matches
+                            </p>
+                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                Let's get started!
+                            </p>
+                            <button
+                                data-aos="fade-left"
+                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                            >
+                                <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                Login
+                            </button>
+                            <button
+                                data-aos="fade-right"
+                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                            >
+                                How it Works
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* Second Image */}
                 <div>
-                    <div className="relative w-full h-screen">
+                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
                         <img
                             src="/images/cs:go2.jpeg"
                             alt="Counter Strike"
-                            className="w-full h-full object-cover"
-                            style={{ height: "85vh" }}
+                            className="w-full h-full object-cover md:h-[900px]"
                         />
-                        <div className="absolute inset-0 bg-black opacity-75" style={{ height: '85vh' }}></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-36"> {/* Adjust this value */}
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">Welcome to <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">PreQursor</span></h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">A Unified Platform for Managing E-Sports Matches</p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">Let's get started!</p>
-                            <button data-aos="fade-left" className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"><FontAwesomeIcon icon={faUser} className="mr-2" />Login</button>
-                            <button data-aos="fade-right" className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered">How it Works</button>
+                        <div className="absolute inset-0 bg-black opacity-75"></div>
+                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                Welcome to{" "}
+                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                    PreQursor
+                                </span>
+                            </h1>
+                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                A Unified Platform for Managing E-Sports Matches
+                            </p>
+                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                Let's get started!
+                            </p>
+                            <button
+                                data-aos="fade-left"
+                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                            >
+                                <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                Login
+                            </button>
+                            <button
+                                data-aos="fade-right"
+                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                            >
+                                How it Works
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* Third Image */}
                 <div>
-                    <div className="relative w-full h-screen">
+                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
                         <img
                             src="/images/pubg2.jpeg"
                             alt="PUBG"
-                            className="w-full h-full object-cover"
-                            style={{ height: "85vh" }}
+                            className="w-full h-full object-cover md:h-[950px]"
                         />
-                        <div className="absolute inset-0 bg-black opacity-75" style={{ height: '85vh' }}></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-36"> {/* Adjust this value */}
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">Welcome to <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">PreQursor</span></h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">A Unified Platform for Managing E-Sports Matches</p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">Let's get started!</p>
-                            <button data-aos="fade-left" className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"><FontAwesomeIcon icon={faUser} className="mr-2" />Login</button>
-                            <button data-aos="fade-right" className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered">How it Works</button>
+                        <div className="absolute inset-0 bg-black opacity-75"></div>
+                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                Welcome to{" "}
+                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                    PreQursor
+                                </span>
+                            </h1>
+                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                A Unified Platform for Managing E-Sports Matches
+                            </p>
+                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                Let's get started!
+                            </p>
+                            <button
+                                data-aos="fade-left"
+                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                            >
+                                <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                Login
+                            </button>
+                            <button
+                                data-aos="fade-right"
+                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                            >
+                                How it Works
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -84,6 +139,7 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
 
 
 

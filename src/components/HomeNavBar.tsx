@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { Link } from "react-router-dom";
 
 const HomeNavBar: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -33,7 +34,7 @@ const HomeNavBar: React.FC = () => {
 
                     {/* Navigation Links for larger screens */}
                     <div className="hidden lg:flex items-center space-x-6 font-poppins">
-                        {["Games", "How it Works", "Contact", "About"].map((item) => (
+                        {["Games", "How it Works", "About", "Contact"].map((item) => (
                             <div className="relative group" key={item}>
                                 <span className="text-lg font-medium hover:cursor-pointer active:text-gray-300 transition duration-300">
                                     {item}
@@ -68,7 +69,7 @@ const HomeNavBar: React.FC = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="lg:hidden bg-white text-orangered rounded-2xl shadow-lg mt-2 py-2 w-full">
-                        {["Games", "How it Works", "Contact", "About"].map((item) => (
+                        {["Games", "How it Works", "About", "Contact"].map((item) => (
                             <div
                                 key={item}
                                 className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
@@ -90,3 +91,5 @@ const HomeNavBar: React.FC = () => {
 }
 
 export default HomeNavBar;
+
+
