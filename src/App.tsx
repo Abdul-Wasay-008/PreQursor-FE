@@ -5,14 +5,30 @@ import Games from './components/Games';
 import HowItWorks from './components/HowItWorks';
 import About from './components/About';
 import Contact from './components/Contact';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 // carousel Setup
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-//Routing 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 // AOS Setup
 import AOS from "aos";
 import 'aos/dist/aos.css';
+// Routing Setup
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// HomePage Component to group all homepage sections
+const HomePage = () => {
+  return (
+    <div>
+      <HomeNavBar />
+      <HeroSection />
+      <Games />
+      <HowItWorks />
+      <About />
+      <Contact />
+    </div>
+  );
+};
 
 function App() {
   useEffect(() => {
@@ -23,15 +39,15 @@ function App() {
 
   return (
     <div className="App overflow-hidden">
-      <HomeNavBar />
-      <HeroSection />
-      <Games />
-      <HowItWorks />
-      <About />
-      <Contact />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-

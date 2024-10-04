@@ -2,8 +2,16 @@ import React from "react";
 import Slider from "react-slick";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate("/login");
+    };
+
     const settings = {
         dots: false,
         infinite: true,
@@ -15,262 +23,217 @@ const HeroSection: React.FC = () => {
     };
 
     return (
-        <div className="relative w-full h-screen font-poppins overflow-hidden" style={{ height: "85vh" }}>
-            <Slider {...settings}>
-                {/* First Image */}
-                <div>
-                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
-                        <img
-                            src="/images/cod2.jpeg"
-                            alt="Call of Duty"
-                            className="w-full h-full object-cover md:h-[165vh] "
-                        />
-                        <div className="absolute inset-0 bg-black opacity-75"></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
-                                Welcome to{" "}
-                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
-                                    PreQursor
-                                </span>
-                            </h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
-                                A Unified Platform for Managing E-Sports Matches
-                            </p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
-                                Let's get started!
-                            </p>
-                            <button
-                                data-aos="fade-left"
-                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
-                            >
-                                <FontAwesomeIcon icon={faUser} className="mr-2" />
-                                Login
-                            </button>
-                            <button
-                                data-aos="fade-right"
-                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
-                            >
-                                How it Works
-                            </button>
+        <div>
+            {/* Mobiles and Tablets View */}
+            <div className="lg:hidden">
+                <div className="relative w-full h-screen font-poppins overflow-hidden" style={{ height: "85vh" }}>
+                    <Slider {...settings}>
+                        {/* First Image */}
+                        <div>
+                            <div className="relative w-full h-[85vh]"> {/* Change made here */}
+                                <img
+                                    src="/images/cod2.jpeg"
+                                    alt="Call of Duty"
+                                    className="w-full h-full object-cover md:h-[165vh] "
+                                />
+                                <div className="absolute inset-0 bg-black opacity-75"></div>
+                                <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                                    <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                        Welcome to{" "}
+                                        <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                            PreQursor
+                                        </span>
+                                    </h1>
+                                    <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                        A Unified Platform for Managing E-Sports Matches
+                                    </p>
+                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                        Let's get started!
+                                    </p>
+                                    <button
+                                        data-aos="fade-left"
+                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                        onClick={handleLoginClick}
+                                    >
+                                        <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                        Login
+                                    </button>
+                                    <Link
+                                        key="howitworks"
+                                        to="howitworks" // This must match the ID of your target section
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0} // Optional: Adjust based on the height of your navbar
+                                        duration={600}
+                                        className="relative group"
+                                    >
+                                        <button
+                                            data-aos="fade-right"
+                                            className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                        >
+                                            How it Works
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                {/* Second Image */}
-                <div>
-                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
-                        <img
-                            src="/images/cs:go2.jpeg"
-                            alt="Counter Strike"
-                            className="w-full h-full object-cover md:h-[900px]"
-                        />
-                        <div className="absolute inset-0 bg-black opacity-75"></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
-                                Welcome to{" "}
-                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
-                                    PreQursor
-                                </span>
-                            </h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
-                                A Unified Platform for Managing E-Sports Matches
-                            </p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
-                                Let's get started!
-                            </p>
-                            <button
-                                data-aos="fade-left"
-                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
-                            >
-                                <FontAwesomeIcon icon={faUser} className="mr-2" />
-                                Login
-                            </button>
-                            <button
-                                data-aos="fade-right"
-                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
-                            >
-                                How it Works
-                            </button>
+                        {/* Second Image */}
+                        <div>
+                            <div className="relative w-full h-[85vh]"> {/* Change made here */}
+                                <img
+                                    src="/images/cs:go2.jpeg"
+                                    alt="Counter Strike"
+                                    className="w-full h-full object-cover md:h-[900px]"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-75"></div>
+                                <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                                    <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                        Welcome to{" "}
+                                        <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                            PreQursor
+                                        </span>
+                                    </h1>
+                                    <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                        A Unified Platform for Managing E-Sports Matches
+                                    </p>
+                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                        Let's get started!
+                                    </p>
+                                    <button
+                                        data-aos="fade-left"
+                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                    >
+                                        <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                        Login
+                                    </button>
+                                    <button
+                                        data-aos="fade-right"
+                                        className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                    >
+                                        How it Works
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                {/* Third Image */}
-                <div>
-                    <div className="relative w-full h-[85vh]"> {/* Change made here */}
-                        <img
-                            src="/images/pubg2.jpeg"
-                            alt="PUBG"
-                            className="w-full h-full object-cover md:h-[950px]"
-                        />
-                        <div className="absolute inset-0 bg-black opacity-75"></div>
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
-                            <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
-                                Welcome to{" "}
-                                <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
-                                    PreQursor
-                                </span>
-                            </h1>
-                            <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
-                                A Unified Platform for Managing E-Sports Matches
-                            </p>
-                            <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
-                                Let's get started!
-                            </p>
+                        {/* Third Image */}
+                        <div>
+                            <div className="relative w-full h-[85vh]"> {/* Change made here */}
+                                <img
+                                    src="/images/pubg2.jpeg"
+                                    alt="PUBG"
+                                    className="w-full h-full object-cover md:h-[950px]"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-75"></div>
+                                <div className="absolute inset-0 flex flex-col justify-center items-center text-center mb-0">
+                                    <h1 data-aos="fade" className="text-white text-xl md:text-2xl">
+                                        Welcome to{" "}
+                                        <span className="font-orbitron text-orangered font-bold text-4xl border-b-2 border-dashed border-orangered">
+                                            PreQursor
+                                        </span>
+                                    </h1>
+                                    <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
+                                        A Unified Platform for Managing E-Sports Matches
+                                    </p>
+                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                        Let's get started!
+                                    </p>
+                                    <button
+                                        data-aos="fade-left"
+                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                    >
+                                        <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                        Login
+                                    </button>
+                                    <button
+                                        data-aos="fade-right"
+                                        className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                    >
+                                        How it Works
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </Slider>
+                </div>
+            </div>
+
+
+            {/* Laptops and 4K view */}
+            <div className="hidden lg:block lg:px-[86px] xl:px-40 lg:py-24 font-poppins 2xl:px-[17rem]">
+                <div className="flex justify-between">
+                    {/* Left Side - Welcome to PreQursor */}
+                    <div className="text-left pt-32 xl:pt-40 2xl:pt-52 pb-16" data-aos="fade-right">
+                        <h1 className="text-3xl xl:text-4xl 2xl:text-5xl text-center font-semibold text-darkCharcoal leading-tight">
+                            Welcome to{" "}
+                            <span className="font-extrabold xl:text-5xl 2xl:text-6xl text-orangered font-orbitron border-b-4 border-dashed border-orangered">
+                                PreQursor
+                            </span>
+                        </h1>
+                        <p className="mt-6 xl:text-lg 2xl:text-xl 2xl:pt-5 text-center font-semibold text-base justify-center text-gray-700">
+                            A Unified Platform for Managing E-Sports Matches
+                        </p>
+                        <p className="text-gray-600 mt-6 xl:text-base 2xl:text-lg 2xl:pt-2 text-base text-center">
+                            Let's get started!
+                        </p>
+                        <div className="mt-3 space-x-4 text-center">
+                            {/* Login Button */}
                             <button
-                                data-aos="fade-left"
-                                className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                className="text-white bg-orangered mt-10 text-lg py-3 px-8 rounded-full font-bold transition-all duration-300 ease-in-out w-40 transform active:scale-105 active:shadow-[0px_0px_12px_rgba(255,69,0,0.7)] active:brightness-110 focus:outline-none hover:bg-white hover:border hover:border-orangered hover:text-orangered 2xl:text-lg 2xl:py-3 2xl:w-40 xl:py-2 xl:px-6 lg:py-2" onClick={handleLoginClick}
                             >
                                 <FontAwesomeIcon icon={faUser} className="mr-2" />
                                 Login
                             </button>
-                            <button
-                                data-aos="fade-right"
-                                className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+
+
+                            {/* How it Works Button */}
+                            <Link
+                                to="howitworks" // This must match the ID of your target section
+                                spy={true}
+                                smooth={true}
+                                offset={0} // Optional: Adjust based on the height of your navbar
+                                duration={600}
+                                className="relative group"
                             >
-                                How it Works
-                            </button>
+                                <button
+                                    className="text-orangered border border-orangered bg-transparent hover:bg-orangered hover:text-white hover:border-transparent mt-3 text-lg font-semibold py-3 px-8 rounded-full transition-colors duration-300 ease-in-out transform active:scale-105 active:shadow-[0px_0px_12px_rgba(255,69,0,0.7)] active:brightness-110 focus:outline-none 2xl:text-lg 2xl:py-3 2xl:px-10 xl:py-2 xl:px-6 lg:py-2 lg:px-6"
+                                >
+                                    How it Works
+                                </button>
+                            </Link>
                         </div>
+
+                    </div>
+
+                    {/* Right Side - Images */}
+                    <div data-aos="fade-left" className="shadow-xl">
+                        <div className="flex">
+                            {/* Call of Duty Image - Rounded Left Borders */}
+                            <img
+                                src="./images/cod.jpeg"
+                                alt="Call of Duty"
+                                className="h-96 mr-2 object-cover rounded-tl-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem]"
+                            />
+                            <div className="absolute inset-0 rounded-3xl border-8 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                            {/* Pubg Image - Rounded Right Borders */}
+                            <img
+                                src="./images/pubg.jpeg"
+                                alt="Pubg"
+                                className="h-96 object-cover rounded-tr-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem]"
+                            />
+                        </div>
+                        {/* Bottom Image - Adjusted Width and Alignment */}
+                        <img
+                            src="./images/cs:go.jpeg"
+                            alt="Counter Strike Global Offensive"
+                            className="w-[424px] h-72 pt-2 object-cover rounded-b-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-52 xl:h-56 xl:w-[488px] 2xl:h-64 2xl:w-[584px]"
+                        />
                     </div>
                 </div>
-            </Slider>
+            </div>
         </div>
     );
-};
+}
 
 export default HeroSection;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-
-// const HeroSectionImgs = () => {
-//     return (
-//         <div className="flex items-center justify-between">
-//             {/* Left Side - Welcome to PreQursor */}
-//             <div className="text-left">
-//                 <h1 className="text-3xl text-gray-700 font-poppins ">
-//                     Welcome to <span className="font-bold text-4xl text-orangered font-orbitron">PreQursor</span>
-//                 </h1>
-//             </div>
-
-//             {/* Right Side - Images */}
-//             <div>
-//                 <div className="flex">
-//                     {/* Call of Duty Image - Rounded Left Borders */}
-//                     <img
-//                         src="./images/cod.jpeg"
-//                         alt="Call of Duty"
-//                         className="h-96 pr-2 object-cover rounded-tl-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-//                     />
-//                     {/* Pubg Image - Rounded Right Borders */}
-//                     <img
-//                         src="./images/pubg.jpeg"
-//                         alt="Pubg"
-//                         className="h-96 w-[262px] object-cover rounded-tr-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-//                     />
-//                 </div>
-//                 {/* Bottom Image */}
-//                 <img
-//                     src="./images/cs:go.jpeg"
-//                     alt="Counter Strike Global Offensive"
-//                     className="w-[531.5px] h-72 pt-2 object-cover rounded-b-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-//                 />
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default HeroSectionImgs;
