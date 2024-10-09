@@ -103,10 +103,10 @@ const HomeNavBar: React.FC = () => {
                                 {item}
                             </Link>
                         ))}
-                        <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b">
+                        <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b" onClick={handleLoginClick}>
                             Login
                         </div>
-                        <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center">
+                        <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center" onClick={handleSignupClick}>
                             Signup
                         </div>
                     </div>

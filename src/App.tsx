@@ -7,6 +7,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoutes from './utils/ProtectedRoute';
 // carousel Setup
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,6 +46,9 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
