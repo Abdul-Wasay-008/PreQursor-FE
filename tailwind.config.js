@@ -15,6 +15,7 @@ module.exports = {
         bgBlack: "#000000",
         bgSlate: "#2f4f4f",
         bgDarkGray: "#1F1F1F",
+        lightOrange: "#FFE0D1",
       },
       fontFamily: {
         orbitron: ['Orbitron', 'sans-serif'],

@@ -1,0 +1,73 @@
+// import React from "react";
+// import { jwtDecode } from "jwt-decode";
+
+// const DashGreet: React.FC = () => {
+//     const token = localStorage.getItem("accessToken"); 
+
+//     let username = "User  "; // Default username if jwt decoding fails
+//     if (token) {
+//         try {
+//             const decoded: any = jwtDecode(token);
+//             username = decoded.username || "User  ";
+//         } catch (error) {
+//             console.error("Invalid token", error);
+//         }
+//     }
+
+//     return (
+//         <div className="p-6 font-poppins">
+//             <div className="flex items-center justify-center">
+//                 <span className="text-lg text-darkCharcoal font-medium">Welcome, <span className="font-bold text-orangered text-xl">{username}!</span></span>
+//             </div>
+//             <div className="text-sm flex justify-center pt-4">
+//                 <button>
+//                     Add In-Game ID
+//                 </button>
+//                 <button>
+//                     Add Team
+//                 </button>
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default DashGreet;
+import React from "react";
+import { jwtDecode } from "jwt-decode";
+
+const DashGreet: React.FC = () => {
+    const token = localStorage.getItem("accessToken");
+
+    let username = "User"; // Default username if jwt decoding fails
+    if (token) {
+        try {
+            const decoded: any = jwtDecode(token);
+            username = decoded.username || "User";
+        } catch (error) {
+            console.error("Invalid token", error);
+        }
+    }
+
+    return (
+        <div className="p-6 font-poppins">
+            {/* Greeting */}
+            <div className="flex items-center justify-center">
+                <span className="text-lg text-darkCharcoal font-medium">
+                    Welcome, <span className="font-bold text-orangered text-xl">{username}!</span>
+                </span>
+            </div>
+
+            {/* Buttons */}
+            <div className="text-sm flex justify-center pt-4 space-x-4">
+                <button className="bg-orangered text-white py-2 px-6 rounded-xl shadow-lg hover:bg-orange-600 active:bg-white active:text-orangered transition-colors duration-300 font-bold text-sm">
+                    Add In-Game ID
+                </button>
+                <button className="bg-orangered text-white py-2 px-6 rounded-xl shadow-lg hover:bg-orange-600 active:bg-white active:text-orangered transition-colors duration-300 font-bold text-sm">
+                    Add Team
+                </button>
+            </div>
+        </div>
+    );
+}
+
+export default DashGreet;

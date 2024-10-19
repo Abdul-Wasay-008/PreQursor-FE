@@ -117,10 +117,3 @@ const HomeNavBar: React.FC = () => {
 }
 
 export default HomeNavBar;
-
-
-
-
-
-
-
