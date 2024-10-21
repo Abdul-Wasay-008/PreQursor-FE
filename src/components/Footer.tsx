@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
-        <div className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
+        <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
             <div className="flex justify-center">
                 <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered">
                     PreQursor
@@ -16,9 +17,9 @@ const Footer: React.FC = () => {
                         Company
                     </div>
                     <div className="text-gray-400 text-sm mt-2">
-                        <div className="active:text-white duration-200">Games</div>
-                        <div className="pt-2 active:text-white duration-200">How It Works</div>
-                        <div className="pt-2 active:text-white duration-200">About Us</div>
+                        <div className="active:text-white duration-200"><Link to="/#games">Games</Link></div>
+                        <div className="pt-2 active:text-white duration-200"><Link to="/#howitworks">How It Works</Link></div>
+                        <div className="pt-2 active:text-white duration-200"><Link to="/#about">About Us</Link></div>
                     </div>
                 </div>
 
@@ -50,7 +51,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             <div className="text-sm text-textSecondary mt-10 pb-2">© 2024 PreQursor. All rights reserved.</div>
-        </div>
+        </footer>
     );
 }
 
