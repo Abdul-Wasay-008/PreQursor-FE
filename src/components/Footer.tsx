@@ -1,56 +1,59 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
         <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
             <div className="flex justify-center">
-                <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered">
+                <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered lg:text-3xl">
                     PreQursor
                 </div>
             </div>
 
             <div className="mt-6 flex justify-between">
                 {/* Company Section */}
-                <div className="ml-5">
-                    <div className="font-semibold text-white border-b-2 border-orangered inline-block">
+                <div className="ml-5 md:ml-32 lg:ml-56 xl:ml-96 2xl:ml-[30rem]">
+                    <div className="font-semibold text-white border-b-2 border-orangered inline-block lg:text-lg">
                         Company
                     </div>
-                    <div className="text-gray-400 text-sm mt-2">
-                        <div className="active:text-white duration-200"><Link to="/#games">Games</Link></div>
-                        <div className="pt-2 active:text-white duration-200"><Link to="/#howitworks">How It Works</Link></div>
-                        <div className="pt-2 active:text-white duration-200"><Link to="/#about">About Us</Link></div>
+                    <div className="text-gray-400 text-sm mt-2 lg:text-base">
+                        <div className="active:text-white duration-200 hover:cursor-pointer hover:underline">Games</div>
+                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">How It Works</div>
+                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">About Us</div>
                     </div>
                 </div>
 
                 {/* Get Help Section */}
-                <div className="mr-5">
-                    <div className="font-semibold text-white border-b-2 border-orangered inline-block">
+                <div className="mr-5 md:mr-32 lg:mr-56 xl:mr-96 2xl:mr-[30rem]">
+                    <div className="font-semibold text-white border-b-2 border-orangered inline-block lg:text-lg">
                         Get Help
                     </div>
-                    <div className="text-gray-400 text-sm mt-2">
-                        <div className="active:text-white duration-200">Contact Us</div>
-                        <div className="pt-2 active:text-white duration-200">FAQ</div>
-                        <div className="pt-2 active:text-white duration-200">Reward System</div>
+                    <div className="text-gray-400 text-sm mt-2 lg:text-base">
+                        <div className="active:text-white duration-200 hover:cursor-pointer hover:underline">Contact Us</div>
+                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">FAQ</div>
+                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">Reward System</div>
                     </div>
                 </div>
             </div>
 
             <div className="text-center pt-4">
-                <div className="font-semibold border-b-2 border-orangered inline-block">Follow Us</div>
+                <div className="font-semibold border-b-2 border-orangered inline-block lg:text-lg">Follow Us</div>
                 <div className="flex justify-center mt-6 space-x-4">
-                    <div>
+                    <div className="cursor-pointer hover:scale-125 duration-200">
                         <img src="/assets/instagram.svg" alt="Instagram" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
-                    <div>
+                    <div className="cursor-pointer hover:scale-125 duration-200">
                         <img src="/assets/facebook.svg" alt="Facebook" className="rounded-sm h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
-                    <div>
+                    <div className="cursor-pointer hover:scale-125 duration-200">
                         <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
                 </div>
             </div>
-            <div className="text-sm text-textSecondary mt-10 pb-2">© 2024 PreQursor. All rights reserved.</div>
+
+            <a href="mailto:preqursor.team@gmail.com" className="text-base text-orangered underline mt-8 block">
+                preqursor.team@gmail.com
+            </a>
+            <div className="text-sm text-textSecondary pb-2 mt-8">© 2024 PreQursor. All rights reserved.</div>
         </footer>
     );
 }

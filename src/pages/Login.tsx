@@ -14,6 +14,7 @@ const Login: React.FC = () => {
     const ToSignupForm = () => {
         navigate("/signup");
     }
+
     // Handle form submission
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault(); // Prevent default form submission
@@ -45,13 +46,14 @@ const Login: React.FC = () => {
                 navigate("/dashboard");
             } else {
                 const errorResult = await response.json();
+                // Directly use the error message from the server
                 setErrorMessage(errorResult.message || "Login failed");
             }
         } catch (error) {
+            console.error(error);
             setErrorMessage("An error occurred. Please try again.");
         }
     };
-
 
     return (
         <div className="bg-darkCharcoal min-h-screen w-full flex flex-col items-center font-poppins text-white">
