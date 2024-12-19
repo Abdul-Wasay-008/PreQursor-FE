@@ -2,7 +2,7 @@ import React from "react";
 import DashNavbar from "../components/DashNavbar";
 import DashGreet from "../components/DashGreet";
 import ActiveMatches from "../components/ActiveMatches";
-import MatchCard from "../components/MatchCards";
+import MatchDetails from "../components/MatchDetails";
 
 const Dashboard:React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Dashboard:React.FC = () => {
             <DashNavbar />
             <DashGreet />
             <ActiveMatches /> 
-            <MatchCard />
+            <MatchDetails />
         </div>
     );
 }

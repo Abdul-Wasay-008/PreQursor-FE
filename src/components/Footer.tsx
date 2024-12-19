@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
                         Company
                     </div>
                     <div className="text-gray-400 text-sm mt-2 lg:text-base">
-                        <div className="active:text-white duration-200 hover:cursor-pointer hover:underline">Games</div>
+                        <Link to="/games" className="active:text-white duration-200 hover:cursor-pointer hover:underline">Games</Link>
                         <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">How It Works</div>
                         <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">About Us</div>
                     </div>

@@ -43,22 +43,24 @@ const DashGreet: React.FC = () => {
             <div className="text-sm flex justify-center pt-4 space-x-4 xl:mb-3 2xl:mb-4">
                 <button
                     onClick={() => setIsGameModalOpen(true)} // Open the AddInGameModal
-                    className="bg-orangered text-white py-2 px-6 rounded-xl shadow-lg hover:bg-orange-600 active:bg-white active:text-orangered transition-colors duration-200 font-bold text-sm hover:bg-darkOrangeRed 2xl:text-base 2xl:px-7"
+                    className="bg-orangered hover:bg-darkOrangeRed text-white py-2 px-6 rounded-xl shadow-lg transition-all duration-200 ease-in-out hover:bg-orange-600 hover:text-white active:bg-white active:text-orangered font-bold text-sm 2xl:text-base 2xl:px-7 "
                     data-aos="fade-right"
                 >
                     Add In-Game ID
                 </button>
                 <button
                     onClick={() => setIsTeamModalOpen(true)} // Open the AddTeamModal
-                    className="bg-orangered text-white py-2 px-6 rounded-xl shadow-lg hover:bg-orange-600 active:bg-white active:text-orangered transition-colors duration-200 font-bold text-sm hover:bg-darkOrangeRed 2xl:text-base 2xl:px-7"
+                    className="bg-orangered text-white py-2 px-6 rounded-xl shadow-lg transition-all duration-200 ease-in-out hover:bg-orange-600 hover:text-white active:bg-white active:text-orangered font-bold text-sm 2xl:text-base 2xl:px-7 hover:bg-darkOrangeRed"
                     data-aos="fade-left"
                 >
                     Add Team
                 </button>
             </div>
 
+
+
             {/* Modal for Adding In-Game ID */}
-            {isGameModalOpen && currentUser && ( // Check if currentUser exists
+            {isGameModalOpen && currentUser && (
                 <AddInGameModal
                     onClose={handleClose}
                     userId={currentUser.id}
@@ -67,10 +69,10 @@ const DashGreet: React.FC = () => {
             )}
 
             {/* Modal for Adding Team */}
-            {isTeamModalOpen && currentUser && ( // Check if currentUser exists
-                <AddTeamModal 
-                    onClose={() => setIsTeamModalOpen(false)} 
-                    userId={currentUser.id} // Pass userId here
+            {isTeamModalOpen && currentUser && (
+                <AddTeamModal
+                    onClose={() => setIsTeamModalOpen(false)}
+                    userId={currentUser.id}
                 />
             )}
         </div>

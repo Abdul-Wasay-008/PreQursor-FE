@@ -20,11 +20,11 @@ const About: React.FC = () => {
                             </p>
 
                             <p>
-                                Focused on building a fair, transparent, and inclusive environment, <span className="font-orbitron text-orangered">PreQursor</span> is designed for gamers at all levels. Whether you’re a casual player or a pro, PreQursor is here to bring the best out of your gaming experience.
+                                Focused on building a fair, transparent, and inclusive environment, <span className="font-orbitron text-orangered">PreQursor</span> is designed for gamers at all levels. Whether you’re a casual player or a pro, <span className="font-orbitron text-orangered">PreQursor</span> is here to bring the best out of your gaming experience.
                             </p>
 
                             <p>
-                                Join us in shaping the future of e-sports, starting from Pakistan and expanding worldwide.
+                                Join us in shaping the future of e-sports, starting from <span className="text-pakistanGreen">Pakistan</span> and expanding worldwide.
                             </p>
                         </div>
                     </div>
@@ -40,17 +40,17 @@ const About: React.FC = () => {
 
                     {/* About Content */}
                     <div className="flex flex-col lg:flex-row">
-                        <div className="max-w-4xl mx-auto text-base xl:text-xl leading-relaxed space-y-6 text-justify lg:w-2/3 xl:pb-10 " data-aos="fade-right">
+                        <div className="max-w-4xl mx-auto text-base xl:text-xl leading-loose space-y-6 text-justify lg:w-2/3 xl:pb-10" data-aos="fade-right">
                             <p>
                                 <span className="font-orbitron text-orangered">PreQursor</span> is a cutting-edge platform built to elevate the e-sports scene by providing a seamless experience for gamers to compete in organized matches. Our goal is to empower players with an easy-to-use platform where they can showcase their skills, track progress, and enjoy the thrill of competitive gaming.
                             </p>
 
                             <p>
-                                Focused on building a fair, transparent, and inclusive environment, <span className="font-orbitron text-orangered">PreQursor</span> is designed for gamers at all levels. Whether you’re a casual player or a pro, PreQursor is here to bring the best out of your gaming experience.
+                                Focused on building a fair, transparent, and inclusive environment, <span className="font-orbitron text-orangered">PreQursor</span> is designed for gamers at all levels. Whether you’re a casual player or a pro, <span className="font-orbitron text-orangered">PreQursor</span> is here to bring the best out of your gaming experience.
                             </p>
 
                             <p>
-                                Join us in shaping the future of e-sports, starting from Pakistan and expanding worldwide.
+                                Join us in shaping the future of e-sports, starting from <span className="text-pakistanGreen font-poppins">Pakistan</span> and expanding worldwide.
                             </p>
                         </div>
 

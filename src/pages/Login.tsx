@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
@@ -10,6 +10,12 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [showPassword, setShowPassword] = useState(false);
+
+    // Password visibility function
+    const handlePasswordToggle = () => {
+        setShowPassword(!showPassword);
+    }
 
     const ToSignupForm = () => {
         navigate("/signup");
@@ -90,10 +96,10 @@ const Login: React.FC = () => {
                         />
                     </div>
 
-                    {/* Password Input */}
-                    <div>
+                    {/* Password Input with Eye Icon Toggle */}
+                    <div className="relative">
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"} // Toggle between text and password types
                             aria-label="Password"
                             placeholder="Password"
                             value={password}
@@ -101,6 +107,13 @@ const Login: React.FC = () => {
                             className="w-full p-4 rounded-lg border border-gray-600 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-orangered transition duration-200"
                             required
                         />
+                        <button
+                            type="button"
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-beige"
+                            onClick={handlePasswordToggle} // Toggle password visibility
+                        >
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                        </button>
                     </div>
 
                     {/* Forgot Password */}
@@ -127,15 +140,15 @@ const Login: React.FC = () => {
                         </span>
                     </div>
 
-                    {/* Divider */}
+                    {/* Divider
                     <div className="flex items-center space-x-3 my-4">
                         <div className="flex-grow h-px bg-gray-600"></div>
                         <span className="text-gray-400 text-sm">or</span>
                         <div className="flex-grow h-px bg-gray-600"></div>
-                    </div>
+                    </div> */}
 
                     {/* Social Sign-up Buttons */}
-                    <button
+                    {/* <button
                         type="button"
                         className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300 mb-3"
                     >
@@ -146,7 +159,7 @@ const Login: React.FC = () => {
                         className="w-full py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition duration-300"
                     >
                         Login with Google
-                    </button>
+                    </button> */}
                 </form>
             </div>
         </div>

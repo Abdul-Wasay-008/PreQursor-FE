@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import HomeNavBar from './components/HomeNavBar';
 import HeroSection from './components/HeroSection';
 import Games from './components/Games';
@@ -9,6 +9,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
+import EnrolledMatches from './pages/EnrolledMatches';
+import MatchHistory from './pages/MatchHistory';
+import Societies from './pages/Societies';
 import ProtectedRoutes from './utils/ProtectedRoute';
 
 // carousel Setup (for small devices only)
@@ -39,7 +42,7 @@ const HomePage = () => {
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Duration of animations
+      duration: 1000,
     });
   }, []);
 
@@ -47,16 +50,22 @@ function App() {
     <div className="App overflow-hidden">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          {/* Public Routes */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>
             <Route path="/dashboard" element={
               <>
                 <Dashboard />
-                <Footer /> 
+                <Footer />
               </>
             } />
+            <Route path="/enrolled-matches" element={<EnrolledMatches />} />
+            <Route path="/match-history" element={<MatchHistory />} />
+            <Route path="/societies" element={<Societies />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faBell, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-scroll";
 import NotificationModal from "./NotificationModal";
+import { Link } from "react-router-dom";
 
 const DashNavbar: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,22 +43,19 @@ const DashNavbar: React.FC = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
-                        {["Dashboard", "Enrolled Matches", "Match History", "Societies", "Marketplace"].map((item) => (
+                        {["Dashboard", "Enrolled Matches", "Match History", "Societies"].map((item) => (
                             <Link
                                 key={item}
-                                to={item.toLowerCase().replace(/\s/g, '')}
-                                spy={true}
-                                smooth={true}
-                                offset={-250}  // Adjust this based on your layout
-                                duration={600}
+                                to={`/${item.toLowerCase().replace(/\s/g, '-')}`} // Route path in lowercase with dashes
                                 className="block py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
-                                onClick={() => setMobileMenuOpen(false)}  // Close menu on link click
+                                onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                             >
                                 {item}
                             </Link>
                         ))}
                     </div>
                 )}
+
                 {/* Modal for Adding Team */}
                 {isNotificationModalOpen && (
                     <NotificationModal onClose={() => setIsNotificationModalOpen(false)} />
@@ -74,25 +71,25 @@ const DashNavbar: React.FC = () => {
                         {/* Navigation Links */}
                         <ul className="flex space-x-8 font-medium lg:text-sm xl:text-base 2xl:text-base items-center">
                             <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300">Dashboard</span>
+                                <span className="relative z-10 active:text-gray-300"><Link to="/dashboard">Dashboard</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300">Enrolled Matches</span>
+                                <span className="relative z-10 active:text-gray-300"><Link to="/enrolled-matches">Enrolled Matches</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300">Match History</span>
+                                <span className="relative z-10 active:text-gray-300"><Link to="/match-history">Match History</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300">Societies</span>
+                                <span className="relative z-10 active:text-gray-300"><Link to="/societies">Societies</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
-                            <li className="relative cursor-pointer group">
+                            {/* <li className="relative cursor-pointer group">
                                 <span className="relative z-10 active:text-gray-300">Marketplace</span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                            </li>
+                            </li> */}
                             {/* Notification Icon */}
                             <div className="relative">
                                 <FontAwesomeIcon

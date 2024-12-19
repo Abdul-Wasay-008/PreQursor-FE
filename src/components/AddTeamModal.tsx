@@ -1,41 +1,101 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 interface AddTeamModalProps {
     onClose: () => void;
-    userId: string; // Pass the user ID for fetching player IDs
+    userId: string;
 }
 
-const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
+const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
+    //States
     const [teamType, setTeamType] = useState<string | null>(null);
     const [teamLeaderId, setTeamLeaderId] = useState<string>("");
     const [playerIds, setPlayerIds] = useState<string[]>(["", "", ""]);
     const [successMessage, setSuccessMessage] = useState<string>("");
-    const [errorMessage, setErrorMessage] = useState<string>(""); // Added error message state
+    const [errorMessage, setErrorMessage] = useState<string>("");
+    const [isTeamCreated, setIsTeamCreated] = useState<boolean>(false);
+    const [teamId, setTeamId] = useState<string | null>(null);
 
-    // Fetch existing player IDs and leader ID when modal opens
+    const token = localStorage.getItem("accessToken");
+
+    // Fetch and load team data when the modal opens
     useEffect(() => {
-        const fetchTeamData = async () => {
-            try {
-                const response = await fetch(`http://localhost:5000/teams/${userId}`);
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Network response was not ok: ${response.status} ${errorText}`);
-                }
-                const data = await response.json();
-                setTeamLeaderId(data.leaderId || "");
-                setPlayerIds(data.playerIds || ["", "", ""]);
-            } catch (error) {
-                console.error("Error fetching team data:", error);
-            }
-        };
         fetchTeamData();
-    }, [userId]);
+    });
+
+    const fetchTeamData = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/teams/user-teams`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+
+            if (!response.ok) throw new Error("Network response was not ok");
+
+            const data = await response.json();
+
+            if (Array.isArray(data) && data.length > 0) {
+                const team = data[0];
+                setTeamLeaderId(team.teamLeaderInGameId || "");
+                setPlayerIds(team.playersInGameIds || ["", "", ""]);
+                setTeamType(team.teamType || "");
+                setIsTeamCreated(true); // Set as created if a team exists
+                setTeamId(team._id); // Save the team ID
+                console.log("Team Id: ", teamId); //Check
+            } else {
+                setIsTeamCreated(false); // If no team found
+                setTeamId(null);
+            }
+        } catch (error) {
+            console.error("Error fetching team data:", error);
+        }
+    };
+
+    // Team Deletion Function
+    async function deleteTeam(teamId: any) {
+        try {
+            const token = localStorage.getItem("accessToken");
+
+            const response = await fetch(`http://localhost:5000/teams/${teamId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                console.log(result.message);
+                setSuccessMessage("Team deleted successfully!");
+                setErrorMessage("");
+                setTimeout(() => {
+                    setSuccessMessage("");
+                    onClose();
+                }, 2000);
+            } else {
+                // Display error message returned by the backend
+                console.error(result.message || "Failed to delete team");
+                setErrorMessage(result.message || "Failed to delete team");
+            }
+        } catch (error) {
+            console.error("Error deleting team:", error);
+            setErrorMessage("An unexpected error occurred. Please try again.");
+        }
+    }
+
+
 
     // Handle form submission
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // If a team is already created, delete it
+        if (isTeamCreated) {
+            await deleteTeam(teamId);
+            return;
+        }
 
         // Gather form data to send to the backend
         const teamData = {
@@ -49,6 +109,7 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
                 },
                 body: JSON.stringify(teamData),
             });
@@ -62,53 +123,44 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
 
             // Set success message and close modal after 2 seconds
             setSuccessMessage(" Team created successfully!");
-            setErrorMessage(""); // Clear any previous error messages
+            setErrorMessage("");
+            setIsTeamCreated(true);
             setTimeout(() => {
                 setSuccessMessage("");
                 onClose(); // Close the modal on success
             }, 2000);
         } catch (error) {
             console.error(" Error creating team:", error);
-
-            // Default error message
             let errorMessage = " An unknown error occurred. Please try again.";
-
-            // Check if the error is an instance of Error and extract the message
             if (error instanceof Error) {
                 try {
-                    // Parse the error message if it's in JSON format
                     const parsedError = JSON.parse(error.message);
-
-                    // Create a user-friendly error message
                     if (parsedError && parsedError.message) {
-                        // Example: Extract the player ID from the error message
                         const playerIdMatch = parsedError.message.match(/ID (\d+)/);
                         const playerId = playerIdMatch ? playerIdMatch[1] : "unknown ID";
-                        errorMessage = ` PreQursor account for player with ID ${playerId} not found.`;
+                        errorMessage = ` PreQursor account for player with ${playerId} not found.`;
                     } else {
                         errorMessage = " An error occurred. Please try again.";
                     }
                 } catch {
-                    // Fallback to the error message if parsing fails
                     errorMessage = error.message;
                 }
             }
-
-            // Set the formatted error message to the state
             setErrorMessage(errorMessage);
         }
+        setIsTeamCreated(true);
     };
 
 
     return (
         <div data-aos="fade" data-aos-duration="400" className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 font-poppins">
-            <div className="bg-white p-6 rounded-2xl shadow-lg relative overflow-hidden" style={{ animation: "fadeInUp 0.5s ease, bounce 0.3s ease" }}>
+            <div className="bg-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
                 {/* Blurred background balls */}
                 <div className="absolute top-0 left-0 w-40 h-40 bg-orangered rounded-full opacity-50 filter blur-4xl -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-orangered rounded-full opacity-80 filter blur-4xl translate-x-1/2 translate-y-1/2"></div>
 
                 <div className="flex items-center justify-between mb-4 relative z-10">
-                    <h2 className="font-bold text-2xl text-darkCharcoal">Please Make a Team For Squad or Duo Battles</h2>
+                    <h2 className="font-bold text-2xl text-darkCharcoal">Please Make a Team For Duo or Squad Battles</h2>
                     <button
                         onClick={onClose}
                         className="text-gray-500 hover:text-gray-800 focus:outline-none"
@@ -129,6 +181,7 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
                                     type="radio"
                                     name="teamType"
                                     value="duo"
+                                    checked={teamType === "duo"} // Add the checked condition here
                                     onChange={() => setTeamType("duo")}
                                     className="mr-2 cursor-pointer"
                                 />
@@ -139,6 +192,7 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
                                     type="radio"
                                     name="teamType"
                                     value="squad"
+                                    checked={teamType === "squad"} // Add the checked condition here
                                     onChange={() => setTeamType("squad")}
                                     className="mr-2 cursor-pointer hover:shadow-orangered"
                                 />
@@ -187,23 +241,31 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
                                 required
                             />
 
-                            {/* Player IDs */}
-                            {playerIds.map((id, index) => (
-                                <div key={index}>
-                                    <label htmlFor={`player-${index}-id`} className="block text-gray-700 mb-2 font-medium">Player {index + 1} ID:</label>
-                                    <input
-                                        type="text"
-                                        value={id}
-                                        onChange={(e) => {
-                                            const newPlayerIds = [...playerIds];
-                                            newPlayerIds[index] = e.target.value;
-                                            setPlayerIds(newPlayerIds);
-                                        }}
-                                        className="border border-gray-300 rounded p-2 w-full mb-2 focus:border-orangered focus:ring-1 focus:ring-orangered transition-all duration-200 shadow-sm"
-                                        required
-                                    />
-                                </div>
-                            ))}
+                            {/* Players Input Fields */}
+                            <label className="block text-gray-700 mb-2 font-medium">Player 1 ID:</label>
+                            <input
+                                type="text"
+                                value={playerIds[0]}
+                                onChange={(e) => setPlayerIds([e.target.value, playerIds[1], playerIds[2]])}
+                                className="border border-gray-300 rounded p-2 w-full mb-2 focus:border-orangered focus:ring-1 focus:ring-orangered transition-all duration-200 shadow-sm"
+                                required
+                            />
+                            <label className="block text-gray-700 mb-2 font-medium">Player 2 ID:</label>
+                            <input
+                                type="text"
+                                value={playerIds[1]}
+                                onChange={(e) => setPlayerIds([playerIds[0], e.target.value, playerIds[2]])}
+                                className="border border-gray-300 rounded p-2 w-full mb-2 focus:border-orangered focus:ring-1 focus:ring-orangered transition-all duration-200 shadow-sm"
+                                required
+                            />
+                            <label className="block text-gray-700 mb-2 font-medium">Player 3 ID:</label>
+                            <input
+                                type="text"
+                                value={playerIds[2]}
+                                onChange={(e) => setPlayerIds([playerIds[0], playerIds[1], e.target.value])}
+                                className="border border-gray-300 rounded p-2 w-full mb-2 focus:border-orangered focus:ring-1 focus:ring-orangered transition-all duration-200 shadow-sm"
+                                required
+                            />
                         </div>
                     )}
 
@@ -235,10 +297,19 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
                     <div className="text-center">
                         <button
                             type="submit"
-                            className="bg-gradient-to-r from-red-500 to-orangered text-white py-2 px-5 rounded-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orangered"
+                            className=" bg-gradient-to-r from-red-500 to-orangered text-white py-2 px-5 rounded-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orangered"
                         >
-                            <FontAwesomeIcon icon={faUsers} className="mr-2" />
-                            Create Team
+                            {isTeamCreated ? (
+                                <>
+                                    <FontAwesomeIcon icon={faTrashCan} className="mr-2" />
+                                    Delete Team
+                                </>
+                            ) : (
+                                <>
+                                    <FontAwesomeIcon icon={faUsers} className="mr-2" />
+                                    Create Team
+                                </>
+                            )}
                         </button>
                     </div>
                 </form>
@@ -248,4 +319,11 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose, userId }) => {
 };
 
 export default AddTeamModal;
+
+
+
+
+
+
+
 
