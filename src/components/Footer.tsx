@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleNavigation = (path: string) => {
+        navigate(path);
+        window.scrollTo(0, 0);
+    };
     return (
         <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
             <div className="flex justify-center">
@@ -31,7 +37,11 @@ const Footer: React.FC = () => {
                     <div className="text-gray-400 text-sm mt-2 lg:text-base">
                         <div className="active:text-white duration-200 hover:cursor-pointer hover:underline">Contact Us</div>
                         <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">FAQ</div>
-                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline">Reward System</div>
+                        <div className="pt-2 active:text-white duration-200 hover:cursor-pointer hover:underline"
+                            onClick={() => handleNavigation("/rewards-system")}
+                        >
+                            Reward System
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +64,7 @@ const Footer: React.FC = () => {
             <a href="mailto:preqursor.team@gmail.com" className="text-base text-orangered underline mt-8 block">
                 preqursor.team@gmail.com
             </a>
-            <div className="text-sm text-textSecondary pb-2 mt-8">© 2024 PreQursor. All rights reserved.</div>
+            <div className="text-sm text-textSecondary pb-2 mt-8">© 2025 PreQursor. All rights reserved.</div>
         </footer>
     );
 }

@@ -165,7 +165,7 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
                         onClick={onClose}
                         className="text-gray-500 hover:text-gray-800 focus:outline-none"
                         aria-label="Close Modal"
-                        style={{ fontSize: '24px' }}
+                        style={{ fontSize: '28px' }}
                     >
                         &times;
                     </button>

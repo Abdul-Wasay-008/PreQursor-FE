@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faBookmark,
-    faBan,
     faCalendarDays,
     faClock,
     faMapLocationDot,
     faMoneyBill1Wave,
     faPeopleGroup,
+    faGear,
 } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 import { jwtDecode } from "jwt-decode";
@@ -24,8 +23,10 @@ const capitalizeFirstLetter = (word: string) => {
 const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
     const [matchDetails, setMatchDetails] = useState<any>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [isBooking, setIsBooking] = useState(false);
 
     const bookMatch = async (matchId: string): Promise<void> => {
+        setIsBooking(true); // Start the booking process
         try {
             const token: any = localStorage.getItem("accessToken");
 
@@ -59,6 +60,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
             } else {
                 setErrorMessage("An unexpected error occurred during booking.");
             }
+        } finally {
+            setIsBooking(false); // End the booking process
         }
     };
 
@@ -81,7 +84,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
             setMatchDetails(data);
         } catch (error) {
             console.error("Error fetching match details:", error);
-            setErrorMessage("Unable to load match details. Please try again later.");
+            setErrorMessage("You need to have a team in order to join this match.");
         }
     };
 
@@ -100,11 +103,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                         {matchDetails.teamMembers?.map((memberId: string, index: number) => (
                             <div
                                 key={index}
-                                className={`py-2 ${
-                                    index !== matchDetails.teamMembers?.length - 1
-                                        ? "border-b border-beige"
-                                        : ""
-                                }`}
+                                className={`py-2 ${index !== matchDetails.teamMembers?.length - 1
+                                    ? "border-b border-beige"
+                                    : ""
+                                    }`}
                             >
                                 {memberId}
                             </div>
@@ -133,7 +135,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                         onClick={onClose}
                         className="text-gray-500 hover:text-gray-800 focus:outline-none"
                         aria-label="Close Modal"
-                        style={{ fontSize: "22px" }}
+                        style={{ fontSize: "28px" }}
                     >
                         &times;
                     </button>
@@ -231,18 +233,19 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                 {/* Action Buttons */}
                 <div className="text-center justify-center flex flex-wrap relative mt-5 gap-3">
                     <button
-                        className="bg-orangered text-white py-2 px-6 text-sm rounded-full font-medium shadow-lg transition duration-200 ease-in-out hover:shadow-xl active:bg-white active:text-orangered hover:bg-darkOrangeRed"
+                        className="bg-easypaisaButton text-white py-1 px-6 text-base rounded-full font-medium shadow-lg transition duration-200 ease-in-out hover:shadow-xl active:bg-white active:text-easypaisaButton hover:bg-darkerEasyColor flex items-center justify-center"
                         onClick={() => bookMatch(matchId)}
+                        disabled={isBooking}
                     >
-                        <FontAwesomeIcon icon={faBookmark} className="text-sm pr-2" />
-                        Book Now
-                    </button>
-                    <button
-                        className="bg-gray-300 text-gray-700 py-2 px-6 rounded-3xl text-sm font-medium shadow-lg transition duration-200 ease-in-out hover:bg-gray-400 hover:shadow-xl active:bg-white active:text-gray-700"
-                        onClick={onClose}
-                    >
-                        <FontAwesomeIcon icon={faBan} className="text-sm pr-2" />
-                        Cancel
+                        {isBooking ? (
+                            <FontAwesomeIcon
+                                icon={faGear}
+                                className="text-base animate-spin mr-2"
+                            />
+                        ) : (
+                            <img src="/assets/easypay-logo.svg" alt="Easypaisa Logo" className="h-8 w-8 pr-2" />
+                        )}
+                        <span className="">{isBooking ? "Processing..." : "Pay with Easypaisa"}</span>
                     </button>
                 </div>
             </div>
@@ -252,3 +255,5 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
 };
 
 export default BookingModal;
+
+

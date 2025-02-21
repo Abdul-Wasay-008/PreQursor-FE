@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Login: React.FC = () => {
     const navigate = useNavigate();
 
+    //Base API URL from .env file
+    const API_BASE_URL = process.env.REACT_APP_API_URL;
+
     // State to store form data
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -33,7 +36,7 @@ const Login: React.FC = () => {
 
         try {
             // Send the login request to the backend
-            const response = await fetch('http://localhost:5000/auth/login', {
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,9 +54,10 @@ const Login: React.FC = () => {
                 // Redirect user after successful login
                 navigate("/dashboard");
             } else {
-                const errorResult = await response.json();
+                // const errorResult = await response.json();
                 // Directly use the error message from the server
-                setErrorMessage(errorResult.message || "Login failed");
+                // setErrorMessage(errorResult.message || "Login failed");
+                setErrorMessage("Invalid Credentials. Please review your Email and Password and try again")
             }
         } catch (error) {
             console.error(error);
@@ -131,6 +135,7 @@ const Login: React.FC = () => {
                         <FontAwesomeIcon icon={faUser} />
                         <span>Login</span>
                     </button>
+
 
                     {/* Sign-up Prompt */}
                     <div className="text-center text-sm text-gray-400 lg:text-base" onClick={ToSignupForm}>

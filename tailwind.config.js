@@ -18,6 +18,8 @@ module.exports = {
         bgDarkGray: "#1F1F1F",
         lightOrange: "#FFE0D1",
         pakistanGreen: '#00C853',
+        easypaisaButton: "#1db96b",
+        darkerEasyColor: "#14824B",
       },
       fontFamily: {
         orbitron: ['Orbitron', 'sans-serif'],

@@ -13,6 +13,12 @@ import EnrolledMatches from './pages/EnrolledMatches';
 import MatchHistory from './pages/MatchHistory';
 import Societies from './pages/Societies';
 import ProtectedRoutes from './utils/ProtectedRoute';
+import RewardsSystem from './pages/RewardsSystem';
+import FooterLanding from './components/FooterLanding';
+import TermsAndConditions from './pages/Terms&Conditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import PaymentMethod from './pages/PaymentMethod';
 
 // carousel Setup (for small devices only)
 import "slick-carousel/slick/slick.css";
@@ -35,6 +41,7 @@ const HomePage = () => {
       <HowItWorks />
       <About />
       <Contact />
+      <FooterLanding />
     </div>
   );
 };
@@ -54,6 +61,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/rewards-system" element={<RewardsSystem />} />
+          <Route path="/terms&conditions" element={<TermsAndConditions />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
+          <Route path="/refundpolicy" element={<RefundPolicy />} />
+          <Route path="/paymentmethod" element={<PaymentMethod />} />
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>

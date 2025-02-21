@@ -20,6 +20,7 @@ export interface Match {
     battleType: string; // e.g., "squad", "duo", or "solo"
     maxSlots: number;
     availableSlots: number;
+    server: string;
     prizePool: Prize[]; // Array of Prize objects
 }
 

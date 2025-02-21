@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faAward } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,10 @@ const HeroSection: React.FC = () => {
         navigate("/login");
     };
 
+    const handleRewardsPage = () => {
+        navigate("/rewards-system");
+    }
+    
     const settings = {
         dots: false,
         infinite: true,
@@ -30,7 +34,7 @@ const HeroSection: React.FC = () => {
                     <Slider {...settings}>
                         {/* First Image */}
                         <div>
-                            <div className="relative w-full h-[85vh]"> {/* Change made here */}
+                            <div className="relative w-full h-[85vh]">
                                 <img
                                     src="/images/cod2.jpeg"
                                     alt="Call of Duty"
@@ -60,27 +64,113 @@ const HeroSection: React.FC = () => {
                                     </button>
                                     <Link
                                         key="howitworks"
-                                        to="howitworks" // This must match the ID of your target section
+                                        to="howitworks"
                                         spy={true}
                                         smooth={true}
-                                        offset={0} // Optional: Adjust based on the height of your navbar
+                                        offset={0}
                                         duration={600}
                                         className="relative group"
                                     >
                                         <button
                                             data-aos="fade-right"
-                                            className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                            className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
                                         >
                                             How it Works
                                         </button>
                                     </Link>
+                                    <div style={{ position: "relative", display: "inline-block" }}>
+                                        <button
+                                            data-aos="fade-up"
+                                            onClick={handleRewardsPage}
+                                            className="text-white mt-3 mb-0 text-base font-semibold border bg-gradient-to-r from-orangered to-orange border-none py-2 px-7 rounded-3xl shadow-lg active:bg-transparent"
+                                            style={{
+                                                position: "relative",
+                                                zIndex: 10,
+                                            }}
+                                        >
+                                            <FontAwesomeIcon icon={faAward} className="mr-2 text-lg justify-center" />
+                                            Rewards System
+                                        </button>
+
+                                        {/* Random Stars Across the Button */}
+                                        {Array.from({ length: 40 }).map((_, index) => (
+                                            <div
+                                                key={`random-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: "0px",
+                                                    left: `${Math.random() * 100}%`, // Random across full width
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Left */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`left-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`, // Slight variation in bottom position
+                                                    left: `${Math.random() * 10}%`, // Concentrated on the left
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Right */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`right-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`,
+                                                    left: `${90 + Math.random() * 10}%`, // Concentrated on the right
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        <style>
+                                            {`
+                                                @keyframes fall-stars {
+                                                    0% {
+                                                        opacity: 1;
+                                                        transform: translateY(0) scale(1);
+                                                    }
+                                                    100% {
+                                                        opacity: 0;
+                                                        transform: translateY(80px) scale(0.5); /* Increased distance */
+                                                    }
+                                                }
+                                            `}
+                                        </style>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Second Image */}
                         <div>
-                            <div className="relative w-full h-[85vh]"> {/* Change made here */}
+                            <div className="relative w-full h-[85vh]">
                                 <img
                                     src="/images/cs:go2.jpeg"
                                     alt="Counter Strike"
@@ -109,10 +199,96 @@ const HeroSection: React.FC = () => {
                                     </button>
                                     <button
                                         data-aos="fade-right"
-                                        className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                        className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
                                     >
                                         How it Works
                                     </button>
+                                    <div style={{ position: "relative", display: "inline-block" }}>
+                                        <button
+                                            data-aos="fade-up"
+                                            onClick={handleRewardsPage}
+                                            className="text-white mt-3 mb-0 text-base font-semibold border bg-gradient-to-r from-orangered to-orange border-none py-2 px-7 rounded-3xl shadow-lg active:bg-transparent"
+                                            style={{
+                                                position: "relative",
+                                                zIndex: 10,
+                                            }}
+                                        >
+                                            <FontAwesomeIcon icon={faAward} className="mr-2 text-lg justify-center" />
+                                            Rewards System
+                                        </button>
+
+                                        {/* Random Stars Across the Button */}
+                                        {Array.from({ length: 40 }).map((_, index) => (
+                                            <div
+                                                key={`random-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: "0px",
+                                                    left: `${Math.random() * 100}%`, // Random across full width
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Left */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`left-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`, // Slight variation in bottom position
+                                                    left: `${Math.random() * 10}%`, // Concentrated on the left
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Right */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`right-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`,
+                                                    left: `${90 + Math.random() * 10}%`, // Concentrated on the right
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        <style>
+                                            {`
+                                                @keyframes fall-stars {
+                                                    0% {
+                                                        opacity: 1;
+                                                        transform: translateY(0) scale(1);
+                                                    }
+                                                    100% {
+                                                        opacity: 0;
+                                                        transform: translateY(80px) scale(0.5); /* Increased distance */
+                                                    }
+                                                }
+                                            `}
+                                        </style>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,10 +324,96 @@ const HeroSection: React.FC = () => {
                                     </button>
                                     <button
                                         data-aos="fade-right"
-                                        className="text-white mt-3 mb-0 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                        className="text-white mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
                                     >
                                         How it Works
                                     </button>
+                                    <div style={{ position: "relative", display: "inline-block" }}>
+                                        <button
+                                            data-aos="fade-up"
+                                            onClick={handleRewardsPage}
+                                            className="text-white mt-3 mb-0 text-base font-semibold border bg-gradient-to-r from-orangered to-orange border-none py-2 px-7 rounded-3xl shadow-lg active:bg-transparent"
+                                            style={{
+                                                position: "relative",
+                                                zIndex: 10,
+                                            }}
+                                        >
+                                            <FontAwesomeIcon icon={faAward} className="mr-2 text-lg justify-center" />
+                                            Rewards System
+                                        </button>
+
+                                        {/* Random Stars Across the Button */}
+                                        {Array.from({ length: 40 }).map((_, index) => (
+                                            <div
+                                                key={`random-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: "0px",
+                                                    left: `${Math.random() * 100}%`, // Random across full width
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Left */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`left-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`, // Slight variation in bottom position
+                                                    left: `${Math.random() * 10}%`, // Concentrated on the left
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        {/* Clustered Stars at Bottom-Right */}
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={`right-${index}`}
+                                                style={{
+                                                    position: "absolute",
+                                                    bottom: `${Math.random() * 20}px`,
+                                                    left: `${90 + Math.random() * 10}%`, // Concentrated on the right
+                                                    width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                                    height: `${Math.random() * 6 + 2}px`,
+                                                    backgroundColor: "#FFD700",
+                                                    borderRadius: "50%",
+                                                    boxShadow: "0 0 6px #FFD700",
+                                                    animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                                    animationDelay: `${Math.random()}s`,
+                                                }}
+                                            ></div>
+                                        ))}
+
+                                        <style>
+                                            {`
+                                                @keyframes fall-stars {
+                                                    0% {
+                                                        opacity: 1;
+                                                        transform: translateY(0) scale(1);
+                                                    }
+                                                    100% {
+                                                        opacity: 0;
+                                                        transform: translateY(80px) scale(0.5); /* Increased distance */
+                                                    }
+                                                }
+                                            `}
+                                        </style>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -189,10 +451,10 @@ const HeroSection: React.FC = () => {
 
                             {/* How it Works Button */}
                             <Link
-                                to="howitworks" // This must match the ID of your target section
+                                to="howitworks"
                                 spy={true}
                                 smooth={true}
-                                offset={0} // Optional: Adjust based on the height of your navbar
+                                offset={0}
                                 duration={600}
                                 className="relative group"
                             >
@@ -203,6 +465,97 @@ const HeroSection: React.FC = () => {
                                 </button>
                             </Link>
                         </div>
+
+                        {/* Rewards System Button */}
+                        <div className="flex justify-center items-center">
+                            <div style={{ position: "relative", display: "inline-block" }}>
+                                <button
+                                    data-aos=""
+                                    onClick={handleRewardsPage}
+                                    className="text-white mt-8 mb-0 text-lg font-semibold border bg-gradient-to-r from-orangered to-beige border-none py-3 px-8 rounded-full shadow-lg lg:py-2 lg:px-7 2xl:text-lg 2xl:py-3 2xl:px-10 xl:py-2 xl:px-7 lg:mt-6 hover:bg-white"
+                                    style={{
+                                        position: "relative",
+                                        zIndex: 10,
+                                    }}
+                                >
+                                    <FontAwesomeIcon icon={faAward} className="mr-2 text-lg xl:text-xl justify-center" />
+                                    Rewards System
+                                </button>
+                                {/* Random Stars Across the Button */}
+                                {Array.from({ length: 40 }).map((_, index) => (
+                                    <div
+                                        key={`random-${index}`}
+                                        style={{
+                                            position: "absolute",
+                                            bottom: "0px",
+                                            left: `${Math.random() * 100}%`, // Random across full width
+                                            width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                            height: `${Math.random() * 6 + 2}px`,
+                                            backgroundColor: "#FFD700",
+                                            borderRadius: "50%",
+                                            boxShadow: "0 0 6px #FFD700",
+                                            animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                            animationDelay: `${Math.random()}s`,
+                                        }}
+                                    ></div>
+                                ))}
+
+                                {/* Clustered Stars at Bottom-Left */}
+                                {Array.from({ length: 20 }).map((_, index) => (
+                                    <div
+                                        key={`left-${index}`}
+                                        style={{
+                                            position: "absolute",
+                                            bottom: `${Math.random() * 20}px`, // Slight variation in bottom position
+                                            left: `${Math.random() * 10}%`, // Concentrated on the left
+                                            width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                            height: `${Math.random() * 6 + 2}px`,
+                                            backgroundColor: "#FFD700",
+                                            borderRadius: "50%",
+                                            boxShadow: "0 0 6px #FFD700",
+                                            animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                            animationDelay: `${Math.random()}s`,
+                                        }}
+                                    ></div>
+                                ))}
+
+                                {/* Clustered Stars at Bottom-Right */}
+                                {Array.from({ length: 20 }).map((_, index) => (
+                                    <div
+                                        key={`right-${index}`}
+                                        style={{
+                                            position: "absolute",
+                                            bottom: `${Math.random() * 20}px`,
+                                            left: `${90 + Math.random() * 10}%`, // Concentrated on the right
+                                            width: `${Math.random() * 6 + 2}px`, // Increased size range
+                                            height: `${Math.random() * 6 + 2}px`,
+                                            backgroundColor: "#FFD700",
+                                            borderRadius: "50%",
+                                            boxShadow: "0 0 6px #FFD700",
+                                            animation: `fall-stars ${Math.random() * 1.5 + 0.5}s linear infinite`,
+                                            animationDelay: `${Math.random()}s`,
+                                        }}
+                                    ></div>
+                                ))}
+
+                                <style>
+                                    {`
+                                    @keyframes fall-stars {
+                                    0% {
+                                        opacity: 1;
+                                        transform: translateY(0) scale(1);
+                                        }
+                                    100% {
+                                        opacity: 0;
+                                        transform: translateY(80px) scale(0.5); /* Increased distance */
+                                        }
+                                    }
+                                `}
+                                </style>
+                            </div>
+                        </div>
+
+
 
                     </div>
 
