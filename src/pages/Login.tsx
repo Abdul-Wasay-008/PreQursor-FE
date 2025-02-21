@@ -80,6 +80,11 @@ const Login: React.FC = () => {
                         Please login to your <span className="font-orbitron text-white">PreQursor</span> account
                     </div>
 
+                    {/* Vercel Text */}
+                    <div className="text-justify text-red-500">
+                        We are putting the finishing touches on user account creation. This feature will be available soon. Stay tuned to join our platform and become part of the PreQursor community!
+                    </div>
+
                     {/* Error Message */}
                     {errorMessage && (
                         <div className="text-red-500 text-center mb-4">
@@ -128,13 +133,26 @@ const Login: React.FC = () => {
                     </div>
 
                     {/* Login Button */}
-                    <button
+                    {/* <button
                         type="submit"
                         className="w-full py-3 bg-orangered text-white font-bold rounded-lg hover:bg-orange-600 transition duration-300 flex items-center justify-center space-x-2 hover:text-orangered hover:bg-white"
                     >
                         <FontAwesomeIcon icon={faUser} />
                         <span>Login</span>
+                    </button> */}
+
+
+                    {/* Vercel Button */}
+                    <button
+                        type="button"
+                        disabled
+                        className="w-full py-3 bg-gray-400 text-white font-bold rounded-lg flex items-center justify-center space-x-2 cursor-not-allowed"
+                    >
+                        <FontAwesomeIcon icon={faUser} />
+                        <span>Login</span>
                     </button>
+
+
 
 
                     {/* Sign-up Prompt */}

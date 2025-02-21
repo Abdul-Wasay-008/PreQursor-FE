@@ -722,6 +722,12 @@ const Signup: React.FC = () => {
                             Please create your <span className="font-orbitron text-white">PreQursor</span> account
                         </div>
 
+                        {/* Vercel Text */}
+                        <div className="text-justify text-red-500">
+                            We are putting the finishing touches on user account creation. This feature will be available soon. Stay tuned to join our platform and become part of the PreQursor community!
+                        </div>
+
+
                         {/* Username Input */}
                         <div>
                             <input
@@ -785,10 +791,21 @@ const Signup: React.FC = () => {
                         </div>
 
                         {/* Signup Button */}
-                        <button
+                        {/* <button
                             type="submit"
                             className={`w-full py-3 bg-orangered text-white font-bold rounded-lg hover:bg-orange-600 transition duration-300 flex items-center justify-center space-x-2 hover:text-orangered hover:bg-white ${!isChecked ? 'opacity-50 cursor-not-allowed' : ''}`}
                             disabled={!isChecked}
+                        >
+                            <FontAwesomeIcon icon={faRightToBracket} />
+                            <span>Signup</span>
+                        </button> */}
+
+
+                        {/* Vercel Button */}
+                        <button
+                            type="button"
+                            disabled
+                            className="w-full py-3 bg-gray-400 text-white font-bold rounded-lg flex items-center justify-center space-x-2 cursor-not-allowed"
                         >
                             <FontAwesomeIcon icon={faRightToBracket} />
                             <span>Signup</span>
@@ -805,10 +822,10 @@ const Signup: React.FC = () => {
                                 Login here
                             </span>
                         </div>
-                        <div className="text-red-600 text-justify">* Please provide a phone number linked to your JazzCash account. PreQursor will not be responsible for any delays in reward transfers due to incorrect phone numbers.</div>
+                        {/* <div className="text-red-600 text-justify">* Please provide a phone number linked to your JazzCash account. PreQursor will not be responsible for any delays in reward transfers due to incorrect phone numbers.</div> */}
 
                         {/* Confirmation Checkbox */}
-                        <div className="flex items-center space-x-2">
+                        {/* <div className="flex items-center space-x-2">
                             <input
                                 type="checkbox"
                                 id="confirmRead"
@@ -819,7 +836,7 @@ const Signup: React.FC = () => {
                             <label htmlFor="confirmRead" className="text-sm text-gray-300 md:text-base">
                                 I have read and understood the form.
                             </label>
-                        </div> 
+                        </div> */}
                     </form>
                 </div>
             ) : (
