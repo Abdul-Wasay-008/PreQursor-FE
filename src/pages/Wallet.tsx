@@ -158,8 +158,10 @@ function WalletPage() {
                     <div className="mt-6 border-t border-white/50 pt-4 relative text-sm">
                         <p className="pt-2 flex items-center gap-2 2xl:text-base">
                             <User className="h-5 w-5 text-gray-200" />
-                            <div className="font-medium">Username:</div> {user.username}
+                            <div className="font-medium">Username:</div>
+                            {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
                         </p>
+
                         <p className="pt-2 flex items-center gap-2 2xl:text-base">
                             <Dock className="h-5 w-5 text-gray-200" />
                             <div className="font-medium">User ID:</div> <span className="italic">{user.id}</span>
