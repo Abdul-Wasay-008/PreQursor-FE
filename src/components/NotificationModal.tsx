@@ -33,23 +33,23 @@ const NotificationModal: React.FC<NotificationModalProps> = ({ onClose }) => {
                 {/* Notification 1 */}
                 <div className="flex items-center mb-2 text-darkCharcoal">
                     <FontAwesomeIcon icon={faCircle} className="h-3 w-3 mr-2 text-beige" />
-                    <span className="text-gray-800 text-lg">Notification 1</span>
+                    <span className="text-gray-800 text-lg">No new notification</span>
                 </div>
-                <div className="h-[1px] bg-gray-400 mb-2" />
+                {/* <div className="h-[1px] bg-gray-400 mb-2" /> */}
 
                 {/* Notification 2 */}
-                <div className="flex items-center mb-2">
+                {/* <div className="flex items-center mb-2">
                     <FontAwesomeIcon icon={faCircle} className="h-3 w-3 mr-2 text-beige" />
                     <span className="text-gray-800 text-lg">Notification 2</span>
                 </div>
-                <div className="h-[1px] bg-gray-400 mb-2" /> 
+                <div className="h-[1px] bg-gray-400 mb-2" />  */}
 
                 {/* Notification 3 */}
-                <div className="flex items-center mb-2">
+                {/* <div className="flex items-center mb-2">
                     <FontAwesomeIcon icon={faCircle} className="h-3 w-3 mr-2 text-beige" />
                     <span className="text-gray-800 text-lg">Notification 3</span>
                 </div>
-                <div className="h-[1px] bg-gray-400 mb-2" /> 
+                <div className="h-[1px] bg-gray-400 mb-2" />  */}
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ const PrivacyPolicy: React.FC = () => {
                 {/* Last Updated Info */}
                 <div className="text-center border-b border-gray-300 pb-4">
                     <p className="text-sm text-gray-500">
-                        Last Updated: <span className="font-semibold">February 20, 2025</span>
+                        Last Updated: <span className="font-semibold">March 20, 2025</span>
                     </p>
                 </div>
 
@@ -40,7 +40,7 @@ const PrivacyPolicy: React.FC = () => {
                         <ul className="list-disc pl-6 mt-2 leading-loose">
                             <li><span className="font-semibold">Name</span> and <span className="font-semibold">email address</span></li>
                             <li><span className="font-semibold">Mobile number</span> (for payment verification)</li>
-                            <li><span className="font-semibold">Payment details</span> (processed securely through JazzCash)</li>
+                            <li><span className="font-semibold">Payment details</span> (wallet transactions processed within PQ)</li>
                         </ul>
                     </section>
 
@@ -62,8 +62,8 @@ const PrivacyPolicy: React.FC = () => {
                             3. Data Protection & Security
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li>PQ uses <span className="font-semibold">secure encryption</span> to store user data.</li>
-                            <li>We <span className="font-semibold text-red-500">do not share user data</span> with third parties, except for payment processing.</li>
+                            <li>PQ employs <span className="font-semibold">secure encryption</span> to store and protect user data.</li>
+                            <li>We <span className="font-semibold text-red-500">do not share user data</span> with third parties.</li>
                         </ul>
                     </section>
 

@@ -91,7 +91,7 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // If a team is already created, delete it
+        // If a team is already created, delete it first
         if (isTeamCreated) {
             await deleteTeam(teamId);
             return;
@@ -114,15 +114,15 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
                 body: JSON.stringify(teamData),
             });
 
+            // Parse response JSON
+            const data = await response.json();
+
             if (!response.ok) {
-                const errorText = await response.text(); // Get error message from server
-                throw new Error(errorText); // Throw error with server message
+                throw new Error(data.message || "Failed to create team.");
             }
 
-            await response.json();
-
             // Set success message and close modal after 2 seconds
-            setSuccessMessage(" Team created successfully!");
+            setSuccessMessage("Team created successfully!");
             setErrorMessage("");
             setIsTeamCreated(true);
             setTimeout(() => {
@@ -130,26 +130,29 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
                 onClose(); // Close the modal on success
             }, 2000);
         } catch (error) {
-            console.error(" Error creating team:", error);
-            let errorMessage = " An unknown error occurred. Please try again.";
+            console.error(error);
+
+            let errorMessage = "An unknown error occurred. Please try again.";
+
             if (error instanceof Error) {
                 try {
                     const parsedError = JSON.parse(error.message);
+
+                    // Display exact error message from the backend
                     if (parsedError && parsedError.message) {
-                        const playerIdMatch = parsedError.message.match(/ID (\d+)/);
-                        const playerId = playerIdMatch ? playerIdMatch[1] : "unknown ID";
-                        errorMessage = ` PreQursor account for player with ${playerId} not found.`;
-                    } else {
-                        errorMessage = " An error occurred. Please try again.";
+                        errorMessage = parsedError.message;
                     }
                 } catch {
                     errorMessage = error.message;
                 }
             }
+
             setErrorMessage(errorMessage);
         }
+
         setIsTeamCreated(true);
     };
+
 
 
     return (
@@ -280,7 +283,6 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
                     {/* Error Message */}
                     {errorMessage && (
                         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                            <strong className="font-bold">Error!</strong>
                             <span className="block sm:inline">{errorMessage}</span>
                         </div>
                     )}

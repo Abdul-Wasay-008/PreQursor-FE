@@ -14,7 +14,7 @@ const FooterLanding: React.FC = () => {
                 <Link to="refundpolicy" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Refund and Return</Link>
                 <Link to="paymentmethod" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Payment Method</Link>
             </div>
-            <div className="text-white text-center pt-8">© 2025 PreQursor. All rights reserved.</div>
+            <div className="text-white text-center pt-8 font-poppins">© 2025 PreQursor. All rights reserved.</div>
         </footer>
     );
 }

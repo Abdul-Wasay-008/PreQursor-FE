@@ -1,29 +1,49 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
 const HomeNavBar: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
+        setDropdownOpen((prev) => !prev);
     };
 
     const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
+        setMobileMenuOpen((prev) => !prev);
     };
 
     const navigate = useNavigate();
     const handleLoginClick = () => {
+        setDropdownOpen(false);
         navigate("/login");
-    }
+    };
 
     const handleSignupClick = () => {
+        setDropdownOpen(false);
         navigate("/signup");
-    }
+    };
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        if (dropdownOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [dropdownOpen]);
 
     return (
         <nav className="bg-gradient-to-r from-red-600 to-orangered text-white shadow-2xl pb-1">
@@ -36,7 +56,7 @@ const HomeNavBar: React.FC = () => {
                     <div className="lg:hidden">
                         <FontAwesomeIcon
                             icon={mobileMenuOpen ? faTimes : faBars}
-                            className={`text-xl cursor-pointer transform transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'rotate-180' : ''}`} // Add rotation effect
+                            className={`text-xl cursor-pointer transform transition-transform duration-500 ease-in-out ${mobileMenuOpen ? "rotate-180" : ""}`}
                             style={{ marginTop: "1vh" }}
                             onClick={toggleMobileMenu}
                         />
@@ -47,10 +67,10 @@ const HomeNavBar: React.FC = () => {
                         {["Games", "How it Works", "About", "Contact"].map((item) => (
                             <Link
                                 key={item}
-                                to={item.toLowerCase().replace(/\s/g, '')} // Converts "How it Works" to "howitworks"
+                                to={item.toLowerCase().replace(/\s/g, "")}
                                 spy={true}
                                 smooth={true}
-                                offset={0} // Adjust this based on the height of your navbar
+                                offset={0}
                                 duration={600}
                                 className="relative group"
                             >
@@ -63,23 +83,29 @@ const HomeNavBar: React.FC = () => {
                             </Link>
                         ))}
 
-                        {/* User Icon with Hover Effects */}
-                        <div className="relative group">
+                        {/* User Icon with Clickable Dropdown */}
+                        <div className="relative group" ref={dropdownRef}>
                             <div
-                                className={`ml-4 border-2 border-white rounded-xl px-4 py-2 cursor-pointer hover:bg-gray-100 transition duration-200 ${dropdownOpen ? 'bg-gray-100 text-red-500' : ''}`}
+                                className={`ml-4 border-2 border-white rounded-xl px-4 py-2 cursor-pointer hover:bg-gray-100 transition duration-200 ${dropdownOpen ? "bg-gray-100 text-red-500" : ""
+                                    }`}
                                 onClick={toggleDropdown}
                             >
                                 <FontAwesomeIcon
                                     icon={faUser}
-                                    className={`text-lg transition duration-200 ${dropdownOpen ? 'text-red-500' : 'text-white group-hover:text-red-500'}`}
+                                    className={`text-lg transition duration-200 ${dropdownOpen ? "text-red-500" : "text-white group-hover:text-red-500"
+                                        }`}
                                 />
                             </div>
 
                             {/* Dropdown Menu */}
                             {dropdownOpen && (
                                 <div className="absolute right-0 bg-white text-orangered rounded-2xl shadow-lg mt-2 py-2 w-40 z-10">
-                                    <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors" onClick={handleLoginClick}>Login</div>
-                                    <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors" onClick={handleSignupClick}>Signup</div>
+                                    <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors" onClick={handleLoginClick}>
+                                        Login
+                                    </div>
+                                    <div className="py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors" onClick={handleSignupClick}>
+                                        Signup
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -92,13 +118,13 @@ const HomeNavBar: React.FC = () => {
                         {["Games", "How it Works", "About", "Contact"].map((item) => (
                             <Link
                                 key={item}
-                                to={item.toLowerCase().replace(/\s/g, '')} // Converts "How it Works" to "howitworks"
+                                to={item.toLowerCase().replace(/\s/g, "")}
                                 spy={true}
                                 smooth={true}
-                                offset={-250} // Adjust this based on the height of your navbar
+                                offset={-250}
                                 duration={600}
                                 className="block py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
-                                onClick={() => setMobileMenuOpen(false)} // Close menu on item click
+                                onClick={() => setMobileMenuOpen(false)}
                             >
                                 {item}
                             </Link>
@@ -114,6 +140,6 @@ const HomeNavBar: React.FC = () => {
             </div>
         </nav>
     );
-}
+};
 
 export default HomeNavBar;

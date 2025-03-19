@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
     const handleRewardsPage = () => {
         navigate("/rewards-system");
     }
-    
+
     const settings = {
         dots: false,
         infinite: true,
@@ -332,7 +332,8 @@ const HeroSection: React.FC = () => {
                                         <button
                                             data-aos="fade-up"
                                             onClick={handleRewardsPage}
-                                            className="text-white mt-3 mb-0 text-base font-semibold border bg-gradient-to-r from-orangered to-orange border-none py-2 px-7 rounded-3xl shadow-lg active:bg-transparent"
+                                            className="text-white mt-3 mb-0 text-base font-semibold border bg-gradient-to-r from-orangered to-orange border-none py-2 px-7 rounded-3xl shadow-lg active:bg-transparent transition-all duration-500 ease-in-out
+                                                active:bg-gradient-to-l"
                                             style={{
                                                 position: "relative",
                                                 zIndex: 10,
@@ -472,7 +473,11 @@ const HeroSection: React.FC = () => {
                                 <button
                                     data-aos=""
                                     onClick={handleRewardsPage}
-                                    className="text-white mt-8 mb-0 text-lg font-semibold border bg-gradient-to-r from-orangered to-beige border-none py-3 px-8 rounded-full shadow-lg lg:py-2 lg:px-7 2xl:text-lg 2xl:py-3 2xl:px-10 xl:py-2 xl:px-7 lg:mt-6 hover:bg-white"
+                                    className="relative text-white mt-8 mb-0 text-lg font-semibold border border-transparent 
+                                                bg-gradient-to-r from-orangered to-beige py-3 px-8 rounded-full shadow-lg 
+                                                lg:py-2 lg:px-7 2xl:text-lg 2xl:py-3 2xl:px-10 xl:py-2 xl:px-7 lg:mt-6 
+                                                transition-all duration-500 ease-in-out
+                                                hover:bg-gradient-to-l"
                                     style={{
                                         position: "relative",
                                         zIndex: 10,
@@ -481,6 +486,9 @@ const HeroSection: React.FC = () => {
                                     <FontAwesomeIcon icon={faAward} className="mr-2 text-lg xl:text-xl justify-center" />
                                     Rewards System
                                 </button>
+
+
+
                                 {/* Random Stars Across the Button */}
                                 {Array.from({ length: 40 }).map((_, index) => (
                                     <div

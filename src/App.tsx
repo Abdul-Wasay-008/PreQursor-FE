@@ -19,6 +19,8 @@ import TermsAndConditions from './pages/Terms&Conditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import PaymentMethod from './pages/PaymentMethod';
+import PaymentStatus from './pages/PaymentStatus';
+import Wallet from './pages/Wallet';
 
 // carousel Setup (for small devices only)
 import "slick-carousel/slick/slick.css";
@@ -66,6 +68,7 @@ function App() {
           <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/paymentmethod" element={<PaymentMethod />} />
+          <Route path="/payment/status" element={<PaymentStatus />} />
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>
@@ -75,6 +78,7 @@ function App() {
                 <Footer />
               </>
             } />
+            <Route path="/wallet" element={<Wallet />} />
             <Route path="/enrolled-matches" element={<EnrolledMatches />} />
             <Route path="/match-history" element={<MatchHistory />} />
             <Route path="/societies" element={<Societies />} />

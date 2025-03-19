@@ -3,6 +3,7 @@ import { faMedal } from "@fortawesome/free-solid-svg-icons";
 import Timeline from "../components/Timeline";
 import RewardsDistribution from "../components/RewardsDistribution";
 import RewardsFooter from "../components/RewardsFooter";
+import RewardsWallet from "../components/RewardsWallet";
 
 const RewardsSystem: React.FC = () => {
     return (
@@ -31,13 +32,15 @@ const RewardsSystem: React.FC = () => {
 
             {/* Description Section */}
             <div data-aos="fade-up" className="text-justify px-5 2xl:px-96 xl:px-72 lg:px-40 md:px-16 md:mt-7 lg:mt-10 md:text-lg mt-5 text-gray-800 z-10">
-                At <span className="text-orangered font-orbitron">PreQursor,</span> we pride ourselves on offering a fair and transparent reward system that players can trust. Every match you compete in has clearly defined rewards, ensuring that winners are recognized and rewarded quickly. Join us for a straightforward gaming experience where your efforts are always rewarded fairly.
+                At <span className="text-orangered font-orbitron tracking-wide">PreQursor,</span> we pride ourselves on offering a fair and transparent reward system that players can trust. Every match you compete in has clearly defined rewards, ensuring that winners are recognized and rewarded quickly. Join us for a straightforward gaming experience where your efforts are always rewarded fairly.
             </div>
 
             {/* Timeline Section */}
             <Timeline />
 
             <RewardsDistribution />
+
+            <RewardsWallet />
 
             <RewardsFooter />
         </div>

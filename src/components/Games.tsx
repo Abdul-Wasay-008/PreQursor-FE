@@ -38,7 +38,7 @@ const Games: React.FC = () => {
                             {/* Blurred glow effect */}
                             <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
                         </div>
-                        <p className="mt-5 text-xl font-semibold xl:text-2xl">Call of Duty</p>
+                        <p className="mt-5 text-xl font-semibold xl:text-2xl">Call of Duty Mobile</p>
                     </div>
 
                     {/* Game Item: Counter Strike */}

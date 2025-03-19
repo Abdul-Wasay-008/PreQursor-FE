@@ -49,8 +49,15 @@ const Footer: React.FC = () => {
             <div className="text-center pt-4">
                 <div className="font-semibold border-b-2 border-orangered inline-block lg:text-lg">Follow Us</div>
                 <div className="flex justify-center mt-6 space-x-4">
-                    <div className="cursor-pointer hover:scale-125 duration-200">
-                        <img src="/assets/instagram.svg" alt="Instagram" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
+                    <div
+                        className="cursor-pointer hover:scale-125 duration-200"
+                        onClick={() => window.open("https://www.instagram.com/preqursor_technologies/", "_blank")}
+                    >
+                        <img
+                            src="/assets/instagram.svg"
+                            alt="Instagram"
+                            className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200"
+                        />
                     </div>
                     <div className="cursor-pointer hover:scale-125 duration-200">
                         <img src="/assets/facebook.svg" alt="Facebook" className="rounded-sm h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />

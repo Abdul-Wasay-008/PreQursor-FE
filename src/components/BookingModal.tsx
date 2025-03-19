@@ -7,6 +7,7 @@ import {
     faMoneyBill1Wave,
     faPeopleGroup,
     faGear,
+    faBookmark
 } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 import { jwtDecode } from "jwt-decode";
@@ -205,7 +206,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
 
                             <div className="h-[1px] bg-gray-400 my-2" />
 
-                            <div className="text-sm text-gray-700 text-center 2xl:text-base xl:text-sm 2xl:mb-8 xl:mb-7 lg:mb-6 md:mb-5 font-bold">
+                            <div className="text-sm text-orangered text-center 2xl:text-base xl:text-sm 2xl:mb-8 xl:mb-7 lg:mb-6 md:mb-5 font-bold">
                                 <span>
                                     <FontAwesomeIcon
                                         icon={faMoneyBill1Wave}
@@ -233,21 +234,21 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                 {/* Action Buttons */}
                 <div className="text-center justify-center flex flex-wrap relative mt-5 gap-3">
                     <button
-                        className="bg-easypaisaButton text-white py-1 px-6 text-base rounded-full font-medium shadow-lg transition duration-200 ease-in-out hover:shadow-xl active:bg-white active:text-easypaisaButton hover:bg-darkerEasyColor flex items-center justify-center"
+                        className="bg-darkCharcoal hover:bg-jazzButtonHover text-white text-base rounded-full font-semibold shadow-lg transition duration-200 ease-in-out hover:shadow-xl active:bg-white active:text-darkCharcoal active:border active:border-darkCharcoal flex items-center justify-center px-5 py-2"
                         onClick={() => bookMatch(matchId)}
                         disabled={isBooking}
                     >
                         {isBooking ? (
-                            <FontAwesomeIcon
-                                icon={faGear}
-                                className="text-base animate-spin mr-2"
-                            />
+                            <FontAwesomeIcon icon={faGear} className="text-base animate-spin ml-2 mr-1" />
                         ) : (
-                            <img src="/assets/easypay-logo.svg" alt="Easypaisa Logo" className="h-8 w-8 pr-2" />
+                            <FontAwesomeIcon icon={faBookmark} className="text-base mr-2 ml-2" />
                         )}
-                        <span className="">{isBooking ? "Processing..." : "Pay with Easypaisa"}</span>
+                        <span className="ml-1 mr-2">{isBooking ? "Booking..." : "Book Now"}</span>
                     </button>
+
                 </div>
+
+
             </div>
         </div>,
         document.body

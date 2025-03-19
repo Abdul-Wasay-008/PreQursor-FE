@@ -6,7 +6,7 @@ const TermsAndConditions: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     return (
         <div>
@@ -22,13 +22,13 @@ const TermsAndConditions: React.FC = () => {
                 {/* Last Updated Info */}
                 <div className="text-center border-b border-gray-300 pb-4">
                     <p className="text-sm text-gray-500">
-                        Last Updated: <span className="font-semibold">February 20, 2025</span>
+                        Last Updated: <span className="font-semibold">March 20, 2025</span>
                     </p>
                 </div>
 
                 {/* Section Wrapper */}
                 <div className="space-y-8 text-darkCharcoal mt-6">
-                    
+
                     {/* 1. Acceptance of Terms */}
                     <section className="bg-gray-50 shadow-md rounded-lg p-4">
                         <h2 className="text-orangered text-lg font-semibold border-b border-gray-300 pb-2 mb-4">
@@ -58,7 +58,7 @@ const TermsAndConditions: React.FC = () => {
                             3. Payments & Fees
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li>All match entry fees must be paid through <span className="font-semibold">JazzCash.</span></li>
+                            <li>All match entry fees must be paid using your <span className="font-semibold">PQ Wallet.</span> Funds must be manually deposited and verified before entering matches.</li>
                             <li className="text-red-500 font-semibold">PQ takes a 30% commission from each match entry fee.</li>
                             <li className="text-red-500 font-semibold">No refunds will be provided for completed matches.</li>
                         </ul>
@@ -125,7 +125,7 @@ const TermsAndConditions: React.FC = () => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Footer */}
             <RewardsFooter />
         </div>

@@ -6,7 +6,8 @@ const AddInGameModal: React.FC<{ onClose: () => void; userId: string; token: str
     const [selectedGame, setSelectedGame] = useState("PUBG Mobile");
     const [gameId, setGameId] = useState("");
     const [isUpdating, setIsUpdating] = useState(false);
-    const [successMessage, setSuccessMessage] = useState(""); 
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("")
 
     // Fetch the existing game ID when the modal opens
     useEffect(() => {
@@ -56,23 +57,36 @@ const AddInGameModal: React.FC<{ onClose: () => void; userId: string; token: str
                 body: JSON.stringify(requestBody),
             });
 
+            const data = await response.json(); // Parse response JSON
+
             if (!response.ok) {
-                throw new Error('Failed to add/update game ID');
+                throw new Error(data.message || 'Failed to add/update game ID'); // Extract error message from backend
             }
 
-            const data = await response.json();
             console.log("Game ID updated successfully:", data);
             setSuccessMessage(isUpdating ? "Game ID updated successfully!" : "Game ID added successfully!");
+            setErrorMessage(""); // Clear error message on success
+
             if (!isUpdating) {
                 setGameId(""); // Reset only if adding a new ID
             }
+
+            // **Only close the modal if the request was successful**
+            setTimeout(onClose, 2000); // Close modal after 2 seconds
         } catch (error) {
             console.error("Error adding/updating game ID:", error);
-            setSuccessMessage(""); // Clear success message on error
-        }
 
-        // Optionally close the modal after a short delay
-        setTimeout(onClose, 2000); // Close modal after 2 seconds (optional)
+            // Type guard to check if error is an instance of Error
+            if (error instanceof Error) {
+                setErrorMessage(error.message);
+            } else {
+                setErrorMessage("An unknown error occurred.");
+            }
+
+            setSuccessMessage(""); // Clear success message on error
+
+            // **Do NOT close the modal on error**
+        }
     };
 
     return (
@@ -126,6 +140,13 @@ const AddInGameModal: React.FC<{ onClose: () => void; userId: string; token: str
                     {successMessage && (
                         <div className="mb-4 text-green-600 font-medium text-center">
                             {successMessage}
+                        </div>
+                    )}
+
+                    {/* Error Message */}
+                    {errorMessage && (
+                        <div className="mb-4 text-red-600 font-medium text-center">
+                            {errorMessage}
                         </div>
                     )}
 

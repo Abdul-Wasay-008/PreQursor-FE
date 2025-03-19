@@ -22,7 +22,7 @@ const RefundPolicy: React.FC = () => {
                 {/* Last Updated Info */}
                 <div className="text-center border-b border-gray-300 pb-4">
                     <p className="text-sm text-gray-500">
-                        Last Updated: <span className="font-semibold">February 20, 2025</span>
+                        Last Updated: <span className="font-semibold">March 20, 2025</span>
                     </p>
                 </div>
 

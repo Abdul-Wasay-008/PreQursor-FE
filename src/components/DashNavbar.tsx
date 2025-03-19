@@ -43,7 +43,7 @@ const DashNavbar: React.FC = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
-                        {["Dashboard", "Enrolled Matches", "Match History", "Societies"].map((item) => (
+                        {["Dashboard", "Wallet" , "Enrolled Matches", "Match History", "Societies"].map((item) => (
                             <Link
                                 key={item}
                                 to={`/${item.toLowerCase().replace(/\s/g, '-')}`} // Route path in lowercase with dashes
@@ -72,6 +72,10 @@ const DashNavbar: React.FC = () => {
                         <ul className="flex space-x-8 font-medium lg:text-sm xl:text-base 2xl:text-base items-center">
                             <li className="relative cursor-pointer group">
                                 <span className="relative z-10 active:text-gray-300"><Link to="/dashboard">Dashboard</Link></span>
+                                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+                            </li>
+                            <li className="relative cursor-pointer group">
+                                <span className="relative z-10 active:text-gray-300"><Link to="/wallet">Wallet</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             <li className="relative cursor-pointer group">

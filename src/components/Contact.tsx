@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                         <div className="mt-20 text-center xl:mt-10 2xl:mt-36 2xl:text-xl">
                             <div className="text-lg font-semibold">Get in Touch</div>
                             <div className="mt-6 2xl:mt-5">
-                                <a href="mailto:preqursor.team@gmail.com" className="text-orangered">
+                                <a href="mailto:preqursor.team@gmail.com" className="text-orangered hover:underline">
                                     preqursor.team@gmail.com
                                 </a>
                             </div>

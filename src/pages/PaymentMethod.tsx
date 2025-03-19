@@ -6,7 +6,7 @@ const PaymentMethod: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     return (
         <div>
@@ -22,22 +22,22 @@ const PaymentMethod: React.FC = () => {
                 {/* Last Updated Info */}
                 <div className="text-center border-b border-gray-300 pb-4">
                     <p className="text-sm text-gray-500">
-                        Last Updated: <span className="font-semibold">February 20, 2025</span>
+                        Last Updated: <span className="font-semibold">March 20, 2025</span>
                     </p>
                 </div>
 
                 {/* Section Wrapper */}
                 <div className="space-y-8 text-darkCharcoal mt-6">
-                    
+
                     {/* 1. Supported Payment Method */}
                     <section className="bg-gray-50 shadow-md rounded-lg p-4">
                         <h2 className="text-orangered text-lg font-semibold border-b border-gray-300 pb-2 mb-4">
                             1. Supported Payment Method
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li><span className="font-semibold">All payments</span> on PreQursor Technologies ("PQ") are processed exclusively through <span className="font-semibold text-orangered">JazzCash</span>.</li>
-                            <li>Users must have a <span className="font-semibold">valid JazzCash account</span> to complete transactions on PQ.</li>
-                            <li><span className="text-red-500 font-semibold">No other payment methods</span> (Easypaisa, bank transfers, etc.) are currently supported.</li>
+                            <li><span className="font-semibold">All payments</span> on PreQursor Technologies ("PQ") are processed through the <span className="font-semibold text-orangered">PQ Wallet</span>.</li>
+                            <li>Users must <span className="font-semibold">manually deposit funds</span> into their PQ Wallet before making transactions.</li>
+                            <li><span className="text-red-500 font-semibold">No direct third-party payment gateways</span> (JazzCash, Easypaisa, bank transfers, etc.) are integrated.</li>
                         </ul>
                     </section>
 
@@ -47,9 +47,9 @@ const PaymentMethod: React.FC = () => {
                             2. How Payments Work
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li>Users can <span className="font-semibold">pay match entry fees, tournament fees, and other charges</span> via JazzCash.</li>
-                            <li>Upon checkout, users will be redirected to the <span className="font-semibold">secure JazzCash payment gateway</span> to complete their transaction.</li>
-                            <li>Payments are <span className="font-semibold">processed instantly</span>, and users will receive a <span className="font-semibold">confirmation email</span> after a successful transaction.</li>
+                            <li>Users must use their <span className="font-semibold">PQ Wallet balance</span> to pay for match entry fees, tournament fees, and other charges.</li>
+                            <li>To add funds, users need to <span className="font-semibold">manually deposit</span> the desired amount and submit a verification request.</li>
+                            <li>Once verified, the funds will be added to the wallet, and users will receive a <span className="font-semibold">confirmation email</span>.</li>
                         </ul>
                     </section>
 
@@ -59,7 +59,7 @@ const PaymentMethod: React.FC = () => {
                             3. Transaction Fees
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li>JazzCash may apply <span className="font-semibold">standard transaction fees</span> based on their policies.</li>
+                            <li>Users are responsible for any <span className="font-semibold">transaction fees</span> charged by their bank or mobile wallet when depositing funds into PQ.</li>
                             <li>PQ <span className="font-semibold">does not charge additional processing fees</span> apart from the match entry or service fee.</li>
                         </ul>
                     </section>
@@ -70,9 +70,9 @@ const PaymentMethod: React.FC = () => {
                             4. Payment Issues & Support
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
-                            <li>If a payment fails but the amount is deducted, users should <span className="font-semibold">contact JazzCash customer support first</span>.</li>
+                            <li>If a deposit is made but not reflected in the PQ Wallet, users should first <span className="font-semibold">verify the transaction status</span> with their bank or mobile wallet provider.</li>
                             <li>If the issue persists, users can email <span className="text-orangered">preqursor.team@gmail.com</span> with the <span className="font-semibold">transaction ID</span> and <span className="font-semibold">proof of payment</span> for assistance.</li>
-                            <li>Refunds (if applicable) will follow PQ’s <span className="font-semibold">Refund Policy</span> and be processed within <span className="font-semibold">7 business days</span>.</li>
+                            <li>Deposit verifications and any applicable refunds will follow PQ’s <span className="font-semibold">Refund Policy</span> and be processed within <span className="font-semibold">7 business days</span>.</li>
                         </ul>
                     </section>
 
@@ -87,7 +87,7 @@ const PaymentMethod: React.FC = () => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Footer */}
             <RewardsFooter />
         </div>
