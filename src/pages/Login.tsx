@@ -7,7 +7,7 @@ const Login: React.FC = () => {
     const navigate = useNavigate();
 
     //Base API URL from .env file
-    const API_BASE_URL = process.env.REACT_APP_API_URL;
+    const API_BASE = process.env.REACT_APP_API_BASE_URL;
 
     // State to store form data
     const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
 
         try {
             // Send the login request to the backend
-            const response = await fetch(`${API_BASE_URL}/auth/login`, {
+            const response = await fetch(`${API_BASE}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

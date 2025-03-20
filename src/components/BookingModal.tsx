@@ -39,7 +39,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                 throw new Error("User ID is missing in the token.");
             }
 
-            const response: Response = await fetch(`http://localhost:5000/match/${matchId}/book`, {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
+            const response: Response = await fetch(`${API_BASE}/match/${matchId}/book`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -68,8 +69,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
 
     const fetchMatchDetails = async (matchId: string): Promise<void> => {
         try {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
             const token = localStorage.getItem("accessToken");
-            const response = await fetch(`http://localhost:5000/match/${matchId}/details`, {
+            const response = await fetch(`${API_BASE}/match/${matchId}/details`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

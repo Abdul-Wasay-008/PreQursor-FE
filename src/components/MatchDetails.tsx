@@ -29,8 +29,9 @@ const MatchDetails: React.FC = () => {
 
     useEffect(() => {
         async function fetchMatches() {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
             const token = localStorage.getItem("accessToken");
-            const response = await fetch("http://localhost:5000/match", {
+            const response = await fetch(`${API_BASE}/match`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,

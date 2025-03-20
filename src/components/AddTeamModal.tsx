@@ -26,7 +26,8 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
 
     const fetchTeamData = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/teams/user-teams`, {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
+            const response = await fetch(`${API_BASE}/teams/user-teams`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -54,9 +55,10 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
     // Team Deletion Function
     async function deleteTeam(teamId: any) {
         try {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
             const token = localStorage.getItem("accessToken");
 
-            const response = await fetch(`http://localhost:5000/teams/${teamId}`, {
+            const response = await fetch(`${API_BASE}/teams/${teamId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -105,7 +107,8 @@ const AddTeamModal: React.FC<AddTeamModalProps> = ({ onClose }) => {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/teams", {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
+            const response = await fetch(`${API_BASE}/teams`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

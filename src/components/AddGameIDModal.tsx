@@ -13,7 +13,8 @@ const AddInGameModal: React.FC<{ onClose: () => void; userId: string; token: str
     useEffect(() => {
         const fetchGameId = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/idteams/${userId}/get-game-id`, {
+                const API_BASE = process.env.REACT_APP_API_BASE_URL;
+                const response = await fetch(`${API_BASE}/idteams/${userId}/get-game-id`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -48,7 +49,8 @@ const AddInGameModal: React.FC<{ onClose: () => void; userId: string; token: str
         };
 
         try {
-            const response = await fetch(`http://localhost:5000/idteams/${userId}/add-game-id`, {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
+            const response = await fetch(`${API_BASE}/idteams/${userId}/add-game-id`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

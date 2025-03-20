@@ -19,7 +19,8 @@ const Contact: React.FC = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/contact", {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
+            const response = await fetch(`${API_BASE}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

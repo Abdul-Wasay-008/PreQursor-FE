@@ -35,7 +35,8 @@ function WalletPage() {
 
         const fetchBalance = async () => {
             try {
-                const response = await fetch("http://localhost:5000/wallet/balance", {
+                const API_BASE = process.env.REACT_APP_API_BASE_URL;
+                const response = await fetch(`${API_BASE}/wallet/balance`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -96,6 +97,7 @@ function WalletPage() {
 
         // Decode JWT to extract user ID
         try {
+            const API_BASE = process.env.REACT_APP_API_BASE_URL;
             const base64Url = token.split(".")[1];
             const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
             const decodedData = JSON.parse(atob(base64));
@@ -109,7 +111,7 @@ function WalletPage() {
             console.log("📤 Sending FormData:", formData); // ✅ Debugging log
 
             // Send request to backend
-            const response = await fetch("http://localhost:5000/screenshot/upload", {
+            const response = await fetch(`${API_BASE}/screenshot/upload`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`,
