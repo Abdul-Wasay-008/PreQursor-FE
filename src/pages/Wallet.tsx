@@ -82,11 +82,7 @@ function WalletPage() {
             return;
         }
 
-        console.log("📂 Selected File:", selectedFile); // ✅ Debugging log
-
         setUploading(true);
-
-        // Retrieve the JWT token
         const token = localStorage.getItem("accessToken");
 
         if (!token) {
@@ -95,45 +91,46 @@ function WalletPage() {
             return;
         }
 
-        // Decode JWT to extract user ID
         try {
             const API_BASE = process.env.REACT_APP_API_BASE_URL;
             const base64Url = token.split(".")[1];
             const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
             const decodedData = JSON.parse(atob(base64));
-            const userId = decodedData._id; // Extract userId from JWT
+            const userId = decodedData._id;
 
-            // Prepare FormData to send file
             const formData = new FormData();
             formData.append("ss", selectedFile);
             formData.append("userId", userId);
 
-            console.log("📤 Sending FormData:", formData); // ✅ Debugging log
-
-            // Send request to backend
             const response = await fetch(`${API_BASE}/screenshot/upload`, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Accept": "application/json"
+                    Authorization: `Bearer ${token}`,
                 },
                 body: formData,
             });
 
-            const data = await response.json();
+            let data = null;
+
+            try {
+                // ✅ Handle cases where backend returns no JSON
+                data = await response.json();
+            } catch (jsonError) {
+                console.warn("⚠️ Could not parse JSON:", jsonError);
+            }
 
             if (response.ok) {
-                alert("Screenshot uploaded successfully!");
+                alert(data?.message || "Screenshot uploaded successfully.");
                 setSelectedFile(null);
             } else {
-                alert(`Upload failed: ${data.message}`);
+                alert(data?.message || "Upload failed. Please try again.");
             }
         } catch (error) {
-            console.error("Error decoding JWT:", error);
+            console.error("❌ Upload failed:", error);
             alert("Something went wrong. Please try again.");
+        } finally {
+            setUploading(false); // ✅ Always reset loader
         }
-
-        setUploading(false);
     };
 
     return (
