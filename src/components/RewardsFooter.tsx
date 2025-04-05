@@ -31,16 +31,24 @@ const Footer: React.FC = () => {
 
             <div className="text-center pt-6">
                 <div className="font-semibold border-b-2 border-orangered inline-block lg:text-lg">Follow Us</div>
+                {/* Social Media Links */}
                 <div className="flex justify-center mt-6 space-x-4">
+                    {/* Instagram */}
                     <div className="cursor-pointer hover:scale-125 duration-200"
                         onClick={() => window.open("https://www.instagram.com/preqursor_technologies/", "_blank")}
                     >
                         <img src="/assets/instagram.svg" alt="Instagram" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
-                    <div className="cursor-pointer hover:scale-125 duration-200">
+                    {/* Facebook */}
+                    <div className="cursor-pointer hover:scale-125 duration-200"
+                        onClick={() => window.open("https://www.facebook.com/profile.php?id=61574964333036", "_blank")}
+                    >
                         <img src="/assets/facebook.svg" alt="Facebook" className="rounded-sm h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
-                    <div className="cursor-pointer hover:scale-125 duration-200">
+                    {/* LinkedIn */}
+                    <div className="cursor-pointer hover:scale-125 duration-200"
+                        onClick={() => window.open("https://www.linkedin.com/company/106973312/", "_blank")}
+                    >
                         <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
                 </div>
