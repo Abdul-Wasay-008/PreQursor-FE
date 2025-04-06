@@ -98,15 +98,41 @@ const Contact: React.FC = () => {
                             <span>{isSendingMessage ? "Sending..." : "Send"}</span>
                         </button>
                     </form>
+                    {/* Social Media Links */}
+                    <div className="text-center mt-6">
+                        <div className="font-semibold border-b-2 text-lg border-orangered inline-block">Follow Us</div>
+                        {/* Social Media Links */}
+                        <div className="flex justify-center mt-6 space-x-4">
+                            {/* Instagram */}
+                            <div className="cursor-pointer hover:scale-125 duration-200"
+                                onClick={() => window.open("https://www.instagram.com/preqursor_technologies/", "_blank")}
+                            >
+                                <img src="/assets/instagram.svg" alt="Instagram" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
+                            </div>
+                            {/* Facebook */}
+                            <div className="cursor-pointer hover:scale-125 duration-200"
+                                onClick={() => window.open("https://www.facebook.com/profile.php?id=61574964333036", "_blank")}
+                            >
+                                <img src="/assets/facebook.svg" alt="Facebook" className="rounded-sm h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
+                            </div>
+                            {/* LinkedIn */}
+                            <div className="cursor-pointer hover:scale-125 duration-200"
+                                onClick={() => window.open("https://www.linkedin.com/company/106973312/", "_blank")}
+                            >
+                                <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-10 w-10 -mt-1 md:h-12 md:w-12 active:scale-90 duration-200" />
+                            </div>
+                        </div>
+                    </div>
+                    {/* Mail and Location */}
                     <div className="relative pb-96">
-                        <div className="mt-20 text-center xl:mt-10 2xl:mt-36 2xl:text-xl">
-                            <div className="text-lg font-semibold">Get in Touch</div>
-                            <div className="mt-6 2xl:mt-5">
+                        <div className=" text-center 2xl:mt-10 2xl:text-xl">
+                            <div className="text-lg font-semibold mt-11 xl:mt-6 border-b-2 border-orangered inline-block">Get in Touch</div>
+                            <div className="mt-6 xl:mt-4 2xl:mt-5">
                                 <a href="mailto:preqursor.team@gmail.com" className="text-orangered hover:underline">
                                     preqursor.team@gmail.com
                                 </a>
                             </div>
-                            <div className="flex items-center justify-center mt-6 2xl:mt-5">
+                            <div className="flex items-center justify-center mt-4 xl:mt-2 2xl:mt-5">
                                 <FontAwesomeIcon icon={faLocationDot} className="mr-2 " />
                                 <span className="">Gulberg Greens, Islamabad, Pakistan</span>
                             </div>
@@ -119,3 +145,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
