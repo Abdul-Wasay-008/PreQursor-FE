@@ -45,7 +45,7 @@ const Games: React.FC = () => {
                     <div className="flex flex-col justify-center items-center" data-aos="fade-up">
                         <div className="relative">
                             <img
-                                src="./images/csgoIcon.jpeg"
+                                src="./images/freefireIcon.jpeg"
                                 alt="CSGO"
                                 className="h-28 w-28 xl:h-32 xl:w-32 rounded-full object-cover border-orangered"
                             />
@@ -53,7 +53,7 @@ const Games: React.FC = () => {
                             {/* Blurred glow effect */}
                             <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
                         </div>
-                        <p className="mt-5 text-xl font-semibold xl:text-2xl">Counter Strike</p>
+                        <p className="mt-5 text-xl font-semibold xl:text-2xl">Garena Free Fire</p>
                     </div>
 
                     {/* Game Item: DOTA */}
