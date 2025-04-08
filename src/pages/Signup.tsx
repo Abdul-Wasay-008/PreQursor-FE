@@ -141,8 +141,12 @@ const Signup: React.FC = () => {
     return (
         <div className="bg-darkCharcoal min-h-screen w-full flex flex-col items-center font-poppins text-white">
             {/* Logo at the top */}
-            <div className="text-4xl text-orangered font-orbitron font-bold mt-10 mb-8 lg:text-5xl border-b-2 border-dashed border-orangered pb-1">
-                PreQursor
+            <div className="flex justify-center">
+                <img
+                    src="/assets/WebLogo.png"
+                    alt="PreQursor Logo"
+                    className="h-24 md:h-28 2xl:h-32 pt-10 mb-10 w-auto"
+                />
             </div>
 
             {/* Centered signup form */}

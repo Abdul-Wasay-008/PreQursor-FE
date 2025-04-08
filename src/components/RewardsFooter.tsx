@@ -12,8 +12,12 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-darkCharcoal text-white font-poppins pt-12 px-7 text-center" data-aos="fade-up">
             <div className="flex justify-center">
-                <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered lg:text-3xl">
-                    PreQursor
+                <div className="flex justify-center mb-1">
+                    <img
+                        src="/assets/WebLogo.png"
+                        alt="PreQursor Logo"
+                        className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                    />
                 </div>
             </div>
 

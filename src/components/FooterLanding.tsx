@@ -4,8 +4,12 @@ const FooterLanding: React.FC = () => {
     return (
         <footer className="absolute w-full bg-bgDarkGray text-white py-6 text-sm xl:text-base 2xl:text-base">
             <div className="flex justify-center">
-                <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered lg:text-3xl my-4 lg:my-6">
-                    PreQursor
+                <div className="flex justify-center my-4 lg:my-6">
+                    <img
+                        src="/assets/WebLogo.png"
+                        alt="PreQursor Logo"
+                        className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                    />
                 </div>
             </div>
             <div className="flex flex-col items-center font-poppins my-6 z-10 space-y-4">

@@ -46,11 +46,13 @@ const HomeNavBar: React.FC = () => {
     }, [dropdownOpen]);
 
     return (
-        <nav className="bg-gradient-to-r from-red-600 to-orangered text-white shadow-2xl pb-1">
+        <nav className="bg-gradient-to-r from-red-600 to-orangered text-white shadow-2xl">
             <div className="container mx-auto px-6 md:px-16">
                 <div className="flex justify-between items-center p-4">
                     {/* PreQursor Logo */}
-                    <div className="font-bold text-3xl md:text-4xl font-orbitron">PreQursor</div>
+                    <Link to="/" className="flex items-center space-x-2">
+                        <img src="/assets/WebLogoW.png" alt="PreQursor Logo" className="h-11 md:h-12 lg:h-14 xl:h-16 w-auto object-contain" />
+                    </Link>
 
                     {/* Hamburger Icon for Mobile/Tablet */}
                     <div className="lg:hidden">

@@ -16,17 +16,22 @@ const RewardsSystem: React.FC = () => {
                     alt="Reward System"
                     className="object-cover h-80 md:h-[26rem] lg:h-[35rem] xl:h-[46rem] 2xl:h-[55rem] rounded-b-3xl w-full"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-65 rounded-b-3xl"></div> {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-70 rounded-b-3xl"></div> {/* Dark overlay */}
+            </div>
+            
+            {/* Title Section */}
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                <img
+                    src="/assets/WebLogo.png"
+                    alt="PreQursor Logo"
+                    className="h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-24 2xl:mt-2 w-auto object-contain"
+                />
             </div>
 
-            {/* Title Section */}
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-orangered font-bold text-4xl font-orbitron border-b-2 border-dashed border-orangered z-10 lg:text-5xl">
-                PreQursor
-            </div>
 
             {/* Reward System Heading with Medal Icon */}
             <div data-aos="fade" className="flex justify-center items-center text-2xl md:text-3xl md:mt-14 mt-8 font-medium text-darkCharcoal z-10 xl:text-4xl">
-                <FontAwesomeIcon icon={faMedal} className="mr-2 text-beige"/>
+                <FontAwesomeIcon icon={faMedal} className="mr-2 text-beige" />
                 Rewards System
             </div>
 
