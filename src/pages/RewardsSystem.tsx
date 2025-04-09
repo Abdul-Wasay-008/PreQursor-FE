@@ -4,6 +4,7 @@ import Timeline from "../components/Timeline";
 import RewardsDistribution from "../components/RewardsDistribution";
 import RewardsFooter from "../components/RewardsFooter";
 import RewardsWallet from "../components/RewardsWallet";
+import { Link } from "react-router-dom";
 
 const RewardsSystem: React.FC = () => {
     return (
@@ -18,15 +19,17 @@ const RewardsSystem: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70 rounded-b-3xl"></div> {/* Dark overlay */}
             </div>
-            
+
             {/* Title Section */}
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-                <img
-                    src="/assets/WebLogo.png"
-                    alt="PreQursor Logo"
-                    className="h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-24 2xl:mt-2 w-auto object-contain"
-                />
-            </div>
+            <Link to="/">
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <img
+                        src="/assets/WebLogo.png"
+                        alt="PreQursor Logo"
+                        className="h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-24 2xl:mt-2 w-auto object-contain"
+                    />
+                </div>
+            </Link>
 
 
             {/* Reward System Heading with Medal Icon */}

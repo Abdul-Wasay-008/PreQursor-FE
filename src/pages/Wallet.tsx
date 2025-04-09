@@ -149,6 +149,11 @@ function WalletPage() {
 
                 {/* Wallet Card */}
                 <div className="w-96 bg-gradient-to-r from-[#222222] via-[#444444] to-[#CC3700] text-white p-6 rounded-t-2xl shadow-xl relative overflow-hidden md:w-[30rem] xl:w-[35rem]">
+                    <img
+                        src="/assets/PreQursor - LogoW.png"
+                        alt=""
+                        className="w-auto h-10 xl:h-11 absolute left-[20.5rem] md:left-[26.2rem] xl:left-[30.95rem] 2xl:left-[31rem]"
+                    />
                     <h2 className="text-lg font-medium relative 2xl:text-xl"><span className="font-orbitron text-orangered tracking-wider">PREQURSOR</span> Wallet</h2>
                     <p className="text-4xl font-semibold mt-3 relative">💰 {walletBalance}</p>
                     <p className="text-sm opacity-80 mt-3 relative 2xl:text-base">Available Balance</p>

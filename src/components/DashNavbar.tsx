@@ -19,9 +19,10 @@ const DashNavbar: React.FC = () => {
                 {/* Navbar */}
                 <nav className="bg-gradient-to-r from-red-600 to-orangered text-white flex justify-between items-center py-3 px-6">
                     {/* Logo */}
-                    <div className="font-orbitron font-bold text-lg md:text-xl">
-                        PreQursor
-                    </div>
+                    {/* PreQursor Logo */}
+                    <Link to="/" className="flex items-center space-x-2">
+                        <img src="/assets/WebLogoW.png" alt="PreQursor Logo" className="h-11 md:h-12 lg:h-14 xl:h-16 w-auto object-contain" />
+                    </Link>
 
                     {/* Icons (Bell and Hamburger) */}
                     <div className="flex items-center space-x-4">
@@ -43,7 +44,7 @@ const DashNavbar: React.FC = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
-                        {["Dashboard", "Wallet" , "Enrolled Matches", "Match History", "Societies"].map((item) => (
+                        {["Dashboard", "Wallet", "Enrolled Matches", "Match History", "Societies"].map((item) => (
                             <Link
                                 key={item}
                                 to={`/${item.toLowerCase().replace(/\s/g, '-')}`} // Route path in lowercase with dashes
@@ -66,8 +67,10 @@ const DashNavbar: React.FC = () => {
             <div className="hidden lg:block">
                 <div className="font-poppins">
                     <nav className="bg-gradient-to-r from-red-600 to-orangered text-white flex justify-between items-center py-4 px-8 shadow-lg lg:px-24 xl:px-52 2xl:px-80">
-                        {/* Logo Section */}
-                        <div className="font-orbitron font-bold text-2xl xl:text-3xl tracking-wider">PreQursor</div>
+                        {/* PreQursor Logo */}
+                        <Link to="/" className="flex items-center space-x-2">
+                            <img src="/assets/WebLogoW.png" alt="PreQursor Logo" className="h-11 md:h-12 lg:h-14 xl:h-16 w-auto object-contain" />
+                        </Link>
                         {/* Navigation Links */}
                         <ul className="flex space-x-8 font-medium lg:text-sm xl:text-base 2xl:text-base items-center">
                             <li className="relative cursor-pointer group">

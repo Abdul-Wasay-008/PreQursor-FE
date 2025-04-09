@@ -10,10 +10,12 @@ const Footer: React.FC = () => {
     };
     return (
         <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
-            <div className="flex justify-center">
-                <div className="font-orbitron text-orangered text-center text-2xl font-bold border-b-2 border-dashed border-orangered lg:text-3xl">
-                    PreQursor
-                </div>
+            <div className="flex justify-center mb-10 lg:my-2">
+                <img
+                    src="/assets/WebLogo.png"
+                    alt="PreQursor Logo"
+                    className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                />
             </div>
 
             <div className="mt-6 flex justify-between">
@@ -46,7 +48,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            <div className="text-center pt-4">
+            <div className="text-center pt-10">
                 <div className="font-semibold border-b-2 border-orangered inline-block lg:text-lg">Follow Us</div>
                 <div className="flex justify-center mt-6 space-x-4">
                     <div
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            <a href="mailto:preqursor.team@gmail.com" className="text-base text-orangered underline mt-8 block">
+            <a href="mailto:preqursor.team@gmail.com" className="text-base text-orangered underline mt-8 xl:mt-14 block">
                 preqursor.team@gmail.com
             </a>
             <div className="text-sm text-textSecondary pb-2 mt-8">© 2025 PreQursor. All rights reserved.</div>
