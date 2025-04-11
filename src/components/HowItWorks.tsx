@@ -9,7 +9,7 @@ const HowItWorks: React.FC = () => {
                 {/* Mobile and Tablets View */}
                 <div
                     className="relative bg-repeat bg-[length:120%_auto] bg-top md:bg-cover md:bg-center"
-                    style={{ backgroundImage: "url('/assets/bgExtended.png')" }}
+                    style={{ backgroundImage: "url('/assets/bgExtended.webp')" }}
                 >
                     {/* Opacity for the bg pattern */}
                     <div className="absolute inset-0 bg-black bg-opacity-40 z-0" />
@@ -84,7 +84,7 @@ const HowItWorks: React.FC = () => {
                 {/* Bg Pattern */}
                 <div
                     className="relative bg-repeat bg-cover bg-center"
-                    style={{ backgroundImage: "url('/assets/bgExtended.png')" }}
+                    style={{ backgroundImage: "url('/assets/bgExtended.webp')" }}
                 >
                     {/* Opacity for the bg pattern */}
                     <div className="absolute inset-0 bg-black bg-opacity-40 z-0" />

@@ -427,7 +427,7 @@ const HeroSection: React.FC = () => {
             {/* Bg Pattern */}
             <div
                 className="relative bg-no-repeat bg-cover bg-center"
-                style={{ backgroundImage: "url('/assets/Bg - Pattern.png')" }}
+                style={{ backgroundImage: "url('/assets/Bg - Pattern.webp')" }}
             >
                 {/* Opacity for the bg pattern */}
                 <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
