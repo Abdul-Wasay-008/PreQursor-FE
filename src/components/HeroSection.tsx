@@ -595,7 +595,7 @@ const HeroSection: React.FC = () => {
                             </div>
                             {/* Bottom Image - Adjusted Width and Alignment */}
                             <img
-                                src="./images/cs_go.wbp"
+                                src="./images/cs_go.webp"
                                 alt="Counter Strike Global Offensive"
                                 className="w-[424px] h-72 pt-2 object-cover rounded-b-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-52 xl:h-56 xl:w-[488px] 2xl:h-64 2xl:w-[584px]"
                             />
