@@ -581,21 +581,21 @@ const HeroSection: React.FC = () => {
                             <div className="flex">
                                 {/* Call of Duty Image - Rounded Left Borders */}
                                 <img
-                                    src="./images/cod.jpeg"
+                                    src="./images/cod.webp"
                                     alt="Call of Duty"
                                     className="h-96 mr-2 object-cover rounded-tl-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem]"
                                 />
                                 <div className="absolute inset-0 rounded-3xl border-8 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
                                 {/* Pubg Image - Rounded Right Borders */}
                                 <img
-                                    src="./images/pubg.jpeg"
+                                    src="./images/pubg.webp"
                                     alt="Pubg"
                                     className="h-96 object-cover rounded-tr-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem]"
                                 />
                             </div>
                             {/* Bottom Image - Adjusted Width and Alignment */}
                             <img
-                                src="./images/cs:go.jpeg"
+                                src="./images/cs_go.wbp"
                                 alt="Counter Strike Global Offensive"
                                 className="w-[424px] h-72 pt-2 object-cover rounded-b-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-52 xl:h-56 xl:w-[488px] 2xl:h-64 2xl:w-[584px]"
                             />
