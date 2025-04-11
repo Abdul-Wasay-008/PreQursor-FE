@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
                         <div>
                             <div className="relative w-full h-[85vh]">
                                 <img
-                                    src="/images/cod2.jpeg"
+                                    src="/images/cod2.webp"
                                     alt="Call of Duty"
                                     className="w-full h-full object-cover md:h-[165vh] "
                                 />
@@ -172,7 +172,7 @@ const HeroSection: React.FC = () => {
                         <div>
                             <div className="relative w-full h-[85vh]">
                                 <img
-                                    src="/images/cs:go2.jpeg"
+                                    src="/images/cs_go2.webp"
                                     alt="Counter Strike"
                                     className="w-full h-full object-cover md:h-[900px]"
                                 />
@@ -297,7 +297,7 @@ const HeroSection: React.FC = () => {
                         <div>
                             <div className="relative w-full h-[85vh]"> {/* Change made here */}
                                 <img
-                                    src="/images/pubg2.jpeg"
+                                    src="/images/pubg2.webp"
                                     alt="PUBG"
                                     className="w-full h-full object-cover md:h-[950px]"
                                 />
