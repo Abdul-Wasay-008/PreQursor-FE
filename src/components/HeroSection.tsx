@@ -51,12 +51,12 @@ const HeroSection: React.FC = () => {
                                     <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
                                         A Unified Platform for Managing E-Sports Matches
                                     </p>
-                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                    <p data-aos="fade" className="text-white mt-8 text-sm">
                                         Let's get started!
                                     </p>
                                     <button
                                         data-aos="fade-left"
-                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                        className="text-white bg-orangered mt-10 mb-2 border border-transparent text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border active:border-orangered"
                                         onClick={handleLoginClick}
                                     >
                                         <FontAwesomeIcon icon={faUser} className="mr-2" />
@@ -187,12 +187,12 @@ const HeroSection: React.FC = () => {
                                     <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
                                         A Unified Platform for Managing E-Sports Matches
                                     </p>
-                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                    <p data-aos="fade" className="text-white mt-8 text-sm">
                                         Let's get started!
                                     </p>
                                     <button
                                         data-aos="fade-left"
-                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                        className="text-white bg-orangered mt-10 mb-2 text-base border border-transparent py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border active:border-orangered"
                                     >
                                         <FontAwesomeIcon icon={faUser} className="mr-2" />
                                         Login
@@ -312,12 +312,12 @@ const HeroSection: React.FC = () => {
                                     <p data-aos="fade" className="text-white text-sm mt-8 font-bold">
                                         A Unified Platform for Managing E-Sports Matches
                                     </p>
-                                    <p data-aos="fade" className="text-textSecondary mt-8 text-sm">
+                                    <p data-aos="fade" className="text-white mt-8 text-sm">
                                         Let's get started!
                                     </p>
                                     <button
                                         data-aos="fade-left"
-                                        className="text-white bg-orangered mt-10 mb-2 text-base py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border border-orangered"
+                                        className="text-white bg-orangered mt-10 mb-2 text-base border border-transparent py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border active:border-orangered"
                                     >
                                         <FontAwesomeIcon icon={faUser} className="mr-2" />
                                         Login
