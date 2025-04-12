@@ -29,7 +29,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faSignInAlt} className="text-orangered text-4xl mb-4 mt-4" />
                                 <p className="text-xl font-semibold">Log In</p>
                                 <p className="mt-2 text-center">Sign in to your PreQursor account to get started.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
 
                             {/* Step 2 */}
@@ -40,7 +44,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faCheck} className="text-orangered text-4xl mb-4 mt-4" />
                                 <p className="text-xl font-semibold">Select Match</p>
                                 <p className="mt-2 text-center">Browse upcoming matches and select your favorite.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
 
                             {/* Step 3 */}
@@ -51,7 +59,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faGamepad} className="text-orangered text-4xl mb-4 mt-4" />
                                 <p className="text-xl font-semibold">Click Join</p>
                                 <p className="mt-2 text-center">Join the match in one click.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
 
                             {/* Step 4 */}
@@ -62,7 +74,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faDollarSign} className="text-orangered text-4xl mb-4 mt-4" />
                                 <p className="text-xl font-semibold">Pay Entry Fee</p>
                                 <p className="mt-2 text-center">Secure your spot by paying the entry fee.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
 
                             {/* Step 5 */}
@@ -73,7 +89,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faTrophy} className="text-orangered text-4xl mb-4 mt-4" />
                                 <p className="text-xl font-semibold">Win and Get Rewarded</p>
                                 <p className="mt-2 text-center">Play your best, win, and claim your rewards!</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
                         </div>
 
@@ -110,7 +130,10 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faSignInAlt} className="text-orangered text-4xl mb-4 mt-4 xl:mt-1 xl:text-5xl 2xl:text-6xl" />
                                 <p className="text-xl font-bold xl:text-2xl xl:pt-4 2xl:text-3xl">Log In</p>
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Sign in to your PreQursor account to get started.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+
                             </div>
                             {/* Step 2 */}
                             <img
@@ -128,7 +151,10 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faCheck} className="text-orangered text-4xl mb-4 mt-4 xl:mt-1 xl:text-5xl 2xl:text-6xl" />
                                 <p className="text-xl font-bold xl:text-2xl xl:pt-4 2xl:text-3xl">Select Match</p>
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Browse upcoming matches and select your favorite.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+
                             </div>
                             {/* Step 3 */}
                             <img
@@ -145,7 +171,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faGamepad} className="text-orangered text-4xl mb-4 mt-4 xl:mt-1 xl:text-5xl 2xl:text-6xl" />
                                 <p className="text-xl font-bold xl:text-2xl xl:pt-4 2xl:text-3xl">Click Join</p>
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Join the match in one click.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+
                             </div>
                             {/* Step 4 */}
                             <img
@@ -163,7 +193,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faDollarSign} className="text-orangered text-4xl mb-4 mt-4 xl:mt-1 xl:text-5xl 2xl:text-6xl" />
                                 <p className="text-xl font-bold xl:text-2xl xl:pt-4 2xl:text-3xl">Pay Entry Fee</p>
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Secure your spot by paying the entry fee.</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
                             <img
                                 src="/images/girlGun.png"
@@ -179,7 +213,11 @@ const HowItWorks: React.FC = () => {
                                 <FontAwesomeIcon icon={faTrophy} className="text-orangered text-4xl mb-4 mt-4 xl:mt-1 xl:text-5xl 2xl:text-6xl" />
                                 <p className="text-xl font-bold xl:text-2xl xl:pt-4 2xl:text-3xl">Win and Get Rewarded</p>
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Play your best, win, and claim your rewards!</p>
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                                
+                                {/* GLow effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div>
+                                
                             </div>
 
                         </div>

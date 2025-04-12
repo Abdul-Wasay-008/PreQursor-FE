@@ -583,9 +583,12 @@ const HeroSection: React.FC = () => {
                                 <img
                                     src="./images/cod.webp"
                                     alt="Call of Duty"
-                                    className="h-96 mr-2 object-cover rounded-tl-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem]"
+                                    className="h-96 mr-2 object-cover rounded-tl-3xl shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl lg:h-80 lg:w-52 xl:h-96 xl:w-60 2xl:w-72 2xl:h-[29rem] z-10"
                                 />
-                                <div className="absolute inset-0 rounded-3xl border-8 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+
+                                {/* Glow on all three images */}
+                                <div className="absolute inset-0 rounded-3xl border-8 border-transparent z-0 shadow-[0_0_12px_2px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+
                                 {/* Pubg Image - Rounded Right Borders */}
                                 <img
                                     src="./images/pubg.webp"

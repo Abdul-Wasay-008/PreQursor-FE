@@ -20,8 +20,10 @@ const Games: React.FC = () => {
                                 className="h-28 xl:h-32 rounded-full object-cover border-orangered"
                             />
 
-                            {/* Blurred glow effect */}
-                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                            {/* Softened glow effect */}
+                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.5)] pointer-events-none"></div>
+
+
                         </div>
                         <p className="mt-5 text-xl xl:text-2xl font-semibold">PUBG Mobile</p>
                     </div>
@@ -35,8 +37,9 @@ const Games: React.FC = () => {
                                 className="h-28 w-28 xl:h-32 xl:w-32 rounded-full object-cover border-orangered"
                             />
 
-                            {/* Blurred glow effect */}
-                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                            {/* Softened glow effect */}
+                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.5)] pointer-events-none"></div>
+
                         </div>
                         <p className="mt-5 text-xl font-semibold xl:text-2xl">Call of Duty Mobile</p>
                     </div>
@@ -50,8 +53,9 @@ const Games: React.FC = () => {
                                 className="h-28 w-28 xl:h-32 xl:w-32 rounded-full object-cover border-orangered"
                             />
 
-                            {/* Blurred glow effect */}
-                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                            {/* Softened glow effect */}
+                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.5)] pointer-events-none"></div>
+
                         </div>
                         <p className="mt-5 text-xl font-semibold xl:text-2xl">Garena Free Fire</p>
                     </div>
@@ -65,8 +69,9 @@ const Games: React.FC = () => {
                                 className="h-28 w-28 xl:h-32 xl:w-32 rounded-full object-cover border-orangered"
                             />
 
-                            {/* Blurred glow effect */}
-                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_15px_5px_rgba(255,112,67,0.8)]"></div>
+                            {/* Softened glow effect */}
+                            <div className="absolute inset-0 rounded-full border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.5)] pointer-events-none"></div>
+                            
                         </div>
                         <p className="mt-5 text-xl font-semibold xl:text-2xl">DOTA</p>
                     </div>
