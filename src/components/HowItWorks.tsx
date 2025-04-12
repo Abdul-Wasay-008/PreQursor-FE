@@ -107,7 +107,7 @@ const HowItWorks: React.FC = () => {
                     style={{ backgroundImage: "url('/assets/bgExtended.webp')" }}
                 >
                     {/* Opacity for the bg pattern */}
-                    <div className="absolute inset-0 bg-black bg-opacity-40 z-0" />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
                     <div className="hidden lg:block text-darkCharcoal relative z-10 min-h-screen font-poppins py-14">
                         <h1 className="text-4xl font-semibold text-center text-white xl:text-5xl xl:pt-5" data-aos="fade">How It Works</h1>
                         <div className="w-24 h-1 bg-orangered mx-auto rounded mt-2" data-aos="fade"></div>
