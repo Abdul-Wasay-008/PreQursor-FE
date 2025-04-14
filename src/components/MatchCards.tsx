@@ -252,7 +252,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                             alt="PubgCard"
                             className="object-cover h-48 w-full rounded-t-xl mb-4"  // Set height and width for image
                         />
-                        <div className="absolute top-3 left-3 bg-green-500 text-white text-sm font-medium rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
+                        <div className="absolute top-3 left-3 bg-gradient-to-r from-red-600 via-orange to-yellow-500 text-white text-sm font-medium rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
                             Free
                         </div>
                         {/* Match Info Section */}
@@ -344,7 +344,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                             style={{ objectPosition: '50% 0%' }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50 rounded-bl-2xl"></div>
-                        <div className="absolute top-3 left-3 bg-green-500 text-white text-sm font-semibold rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
+                        <div className="absolute top-3 left-3 bg-gradient-to-r from-red-600 via-orange to-yellow-500 text-white text-sm font-semibold rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
                             Free
                         </div>
                     </div>
