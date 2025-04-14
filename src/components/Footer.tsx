@@ -61,10 +61,14 @@ const Footer: React.FC = () => {
                             className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200"
                         />
                     </div>
-                    <div className="cursor-pointer hover:scale-125 duration-200">
+                    <div className="cursor-pointer hover:scale-125 duration-200"
+                        onClick={() => window.open("https://www.facebook.com/profile.php?id=61574964333036", "_blank")}
+                    >
                         <img src="/assets/facebook.svg" alt="Facebook" className="rounded-sm h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
-                    <div className="cursor-pointer hover:scale-125 duration-200">
+                    <div className="cursor-pointer hover:scale-125 duration-200"
+                        onClick={() => window.open("https://www.linkedin.com/company/106973312/", "_blank")}
+                    >
                         <img src="/assets/linkedin.svg" alt="LinkedIn" className="h-8 w-8 md:h-10 md:w-10 active:scale-90 duration-200" />
                     </div>
                 </div>
