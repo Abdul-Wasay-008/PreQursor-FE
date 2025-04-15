@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
 import Timeline from "../components/Timeline";
@@ -7,6 +8,10 @@ import RewardsWallet from "../components/RewardsWallet";
 import { Link } from "react-router-dom";
 
 const RewardsSystem: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="relative font-poppins">
             {/* Image Section */}
