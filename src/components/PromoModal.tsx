@@ -33,7 +33,7 @@ const PromoModal: React.FC<PromoModalProps> = ({ onClose }) => {
                     </h2>
 
                     <p className="text-sm lg:text-base text-center text-white/80 mb-2">
-                        PUBG Mobile – Erangel – Squad Battle
+                        PUBG Mobile – Erangel – Solo Battle
                     </p>
 
                     <p className="text-lg text-center">
