@@ -31,8 +31,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center">Sign in to your PreQursor account to get started.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
 
@@ -46,8 +46,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center">Browse upcoming matches and select your favorite.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
 
@@ -61,8 +61,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center">Join the match in one click.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
 
@@ -76,8 +76,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center">Secure your spot by paying the entry fee.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
 
@@ -91,8 +91,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center">Play your best, win, and claim your rewards!</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
                         </div>
@@ -132,7 +132,7 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Sign in to your PreQursor account to get started.</p>
 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div> */}
 
                             </div>
                             {/* Step 2 */}
@@ -153,7 +153,7 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Browse upcoming matches and select your favorite.</p>
 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] pointer-events-none"></div> */}
 
                             </div>
                             {/* Step 3 */}
@@ -173,8 +173,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Join the match in one click.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
 
                             </div>
                             {/* Step 4 */}
@@ -195,8 +195,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Secure your spot by paying the entry fee.</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
                             <img
@@ -215,8 +215,8 @@ const HowItWorks: React.FC = () => {
                                 <p className="mt-2 text-center xl:mt-8 xl:text-xl">Play your best, win, and claim your rewards!</p>
                                 
                                 {/* GLow effect */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
-                                pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-xl border-2 border-transparent shadow-[0_0_10px_3px_rgba(255,112,67,0.4)] 
+                                pointer-events-none"></div> */}
                                 
                             </div>
 

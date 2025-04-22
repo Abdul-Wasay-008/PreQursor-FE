@@ -1221,7 +1221,7 @@ const HeroSection: React.FC = () => {
                                 />
 
                                 {/* Glow on all three images */}
-                                <div className="absolute inset-0 rounded-3xl border-8 border-transparent z-0 shadow-[0_0_12px_2px_rgba(255,112,67,0.4)] pointer-events-none"></div>
+                                {/* <div className="absolute inset-0 rounded-3xl border-8 border-transparent z-0 shadow-[0_0_12px_2px_rgba(255,112,67,0.4)] pointer-events-none"></div> */}
 
                                 {/* Pubg Image - Rounded Right Borders */}
                                 <img
