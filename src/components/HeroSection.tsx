@@ -618,6 +618,7 @@ import { faUser, faAward } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 import PromoModal from "./PromoModal";
+import CrosshairCursor from "./CrosshairCursor";
 
 const HeroSection: React.FC = () => {
     const navigate = useNavigate();
@@ -1061,6 +1062,7 @@ const HeroSection: React.FC = () => {
                 className="relative bg-no-repeat bg-cover bg-center"
                 style={{ backgroundImage: "url('/assets/Bg - Pattern.webp')" }}
             >
+                <CrosshairCursor />
                 {/* Promo code */}
                 {showPromo && <PromoModal onClose={() => setShowPromo(false)} />}
                 {/* Opacity for the bg pattern */}
