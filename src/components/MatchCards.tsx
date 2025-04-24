@@ -325,12 +325,12 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                                     </svg>
                                 </button>
                             </div>
-                            <p className="text-sm text-gray-600 mt-8 text-center italic">
+                            <p className="text-sm text-gray-600 mt-6 text-center italic">
                                 <FontAwesomeIcon
                                     icon={faEnvelope}
                                     className="text-orange mr-2"
                                 />
-                                A confirmation email with the room name & password will be sent after booking.
+                                A confirmation email with the <span className="font-bold">room name</span> & <span className="font-bold">password</span> will be sent after booking.
                             </p>
                         </div>
                     </div>
@@ -413,7 +413,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                                 icon={faEnvelope}
                                 className="text-orange mr-2"
                             />
-                            A confirmation email with the room name & password will be sent after booking.
+                            A confirmation email with the <span className="font-bold">room name</span> & <span className="font-bold">password</span> will be sent after booking.
                         </p>
                     </div>
                 </div>
