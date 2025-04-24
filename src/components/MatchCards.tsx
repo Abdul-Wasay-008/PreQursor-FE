@@ -210,7 +210,7 @@
 // Free match card
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { faTrophy, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Match } from "./MatchDetails";
 import BookingModal from "./BookingModal";
 
@@ -325,6 +325,13 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                                     </svg>
                                 </button>
                             </div>
+                            <p className="text-sm text-gray-600 mt-8 text-center italic">
+                                <FontAwesomeIcon
+                                    icon={faEnvelope}
+                                    className="text-orange mr-2"
+                                />
+                                A confirmation email with the room name & password will be sent after booking.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -340,7 +347,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                         <img
                             src="/images/PubgCardImg.jpeg"
                             alt="PubgCard"
-                            className="object-cover w-full xl:h-[29rem] lg:h-[28.20rem] 2xl:h-[31rem]"
+                            className="object-cover w-full xl:h-[31.35rem] lg:h-[30.35rem] 2xl:h-[33.5rem]"
                             style={{ objectPosition: '50% 0%' }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50 rounded-bl-2xl"></div>
@@ -401,6 +408,13 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                                 </svg>
                             </button>
                         </div>
+                        <p className="text-sm lg:text-xs xl:text-sm text-gray-600 mt-5 text-center italic">
+                            <FontAwesomeIcon
+                                icon={faEnvelope}
+                                className="text-orange mr-2"
+                            />
+                            A confirmation email with the room name & password will be sent after booking.
+                        </p>
                     </div>
                 </div>
             </div>
