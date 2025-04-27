@@ -137,7 +137,7 @@ function WalletPage() {
         <div
             className="min-h-screen bg-gray-100 bg-no-repeat bg-cover font-poppins"
             style={{
-                backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/moneyPattern.png')",
+                backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/moneyPattern.webp')",
                 backgroundSize: "contain",
                 backgroundRepeat: "repeat",
                 backgroundPosition: "center top",

@@ -20,6 +20,10 @@ const Login: React.FC = () => {
         setShowPassword(!showPassword);
     }
 
+    const ToForgotPassword = () => {
+        navigate("/forgot-password");
+    }
+
     const ToSignupForm = () => {
         navigate("/signup");
     }
@@ -126,7 +130,7 @@ const Login: React.FC = () => {
                     </div>
 
                     {/* Forgot Password */}
-                    <div className="text-center">
+                    <div className="text-center" onClick={ToForgotPassword}>
                         <span className="text-sm text-gray-400 hover:underline cursor-pointer">
                             Forgot your password?
                         </span>
