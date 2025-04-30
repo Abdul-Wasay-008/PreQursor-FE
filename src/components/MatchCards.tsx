@@ -210,15 +210,16 @@
 // Free match card
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrophy, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faTrophy, faEnvelope, faLock, faBolt, faFlagCheckered, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Match } from "./MatchDetails";
 import BookingModal from "./BookingModal";
 
 interface MatchCardProps {
     match: Match;
+    bookingStatus: "open" | "booking_closed" | "in_progress" | "completed";
 }
 
-const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
+const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
     //Booking modal visibility state
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const handleOpenModal = () => setIsBookingModalOpen(true); // Open modal
@@ -235,6 +236,23 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
         availableSlotsPercentage >= 70 ? 'text-green-600' :
             availableSlotsPercentage >= 21 ? 'text-orange' :
                 'text-red-600';
+
+
+    // Booking button styles according to the conditions
+    const getButtonStyles = (status: typeof bookingStatus) => {
+        switch (status) {
+            case "open":
+                return "bg-gradient-to-r from-orangered to-red-700 hover:from-red-700 hover:to-orangered shadow-xl rounded-full text-white active:scale-90 hover:shadow-2xl";
+            case "booking_closed":
+                return "bg-gradient-to-r from-zinc-600 to-zinc-900 text-white cursor-not-allowed border border-zinc-500 rounded-full shadow-inner";
+            case "in_progress":
+                return "bg-darkOrangeRed text-white cursor-not-allowed rounded-full font-bold animate-pulse flex";
+            case "completed":
+                return "bg-gradient-to-r from-orange to-red-900 text-white cursor-not-allowed rounded-full";
+            default:
+                return "";
+        }
+    };
 
     return (
         <div data-aos="fade-up">
@@ -314,17 +332,43 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                                 </div>
                             </div>
 
-                            {/* Button Section */}
                             <div className="flex items-center justify-center mt-4">
-                                <button className="bg-orangered text-white py-2 px-4 rounded-xl hover:bg-orange-600 active:text-orangered active:bg-white duration-300 text-sm w-full flex items-center justify-center font-bold"
-                                    onClick={handleOpenModal}
+                                <button
+                                    disabled={bookingStatus !== "open"}
+                                    onClick={bookingStatus === "open" ? handleOpenModal : undefined}
+                                    className={`w-full text-sm font-bold py-2 md:py-3 md:w-[70%] px-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 ${getButtonStyles(bookingStatus)}`}
                                 >
-                                    <span>Book My Slot</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-2 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
-                                    </svg>
+                                    {bookingStatus === "open" && (
+                                        <>
+                                            <span>Book My Slot</span>
+                                            <FontAwesomeIcon icon={faArrowRight} className="text-xs" />
+                                        </>
+                                    )}
+
+                                    {bookingStatus === "booking_closed" && (
+                                        <>
+                                            <span>Booking Closed</span>
+                                            <FontAwesomeIcon icon={faLock} className="text-xs -translate-y-[0px]" />
+                                        </>
+                                    )}
+
+                                    {bookingStatus === "in_progress" && (
+                                        <>
+                                            <span>Match in Progress</span>
+                                            <FontAwesomeIcon icon={faBolt} className="text-xs" />
+                                        </>
+                                    )}
+
+                                    {bookingStatus === "completed" && (
+                                        <>
+                                            <span>Match Completed</span>
+                                            <FontAwesomeIcon icon={faFlagCheckered} className="text-xs" />
+                                        </>
+                                    )}
                                 </button>
                             </div>
+
+                            {/* Email confirmation text */}
                             <p className="text-sm text-gray-600 mt-6 text-center italic">
                                 <FontAwesomeIcon
                                     icon={faEnvelope}
@@ -347,7 +391,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                         <img
                             src="/images/PubgCardImg.jpeg"
                             alt="PubgCard"
-                            className="object-cover w-full xl:h-[31.35rem] lg:h-[30.35rem] 2xl:h-[33.5rem]"
+                            className="object-cover w-full xl:h-[31.35rem] lg:h-[30.35rem] 2xl:h-[33.7rem]"
                             style={{ objectPosition: '50% 0%' }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50 rounded-bl-2xl"></div>
@@ -399,15 +443,44 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
 
                         {/*Button*/}
                         <div className="flex justify-center mt-6">
-                            <button className="bg-orangered hover:bg-darkOrangeRed text-white py-2 px-5 rounded-xl transition-colors duration-200 ease-in-out active:text-orangered active:bg-white font-semibold shadow-md transform flex"
-                                onClick={handleOpenModal}
+                            <button
+                                disabled={bookingStatus !== "open"}
+                                onClick={bookingStatus === "open" ? handleOpenModal : undefined}
+                                className={`py-2 px-5 2xl:text-base lg:text-sm font-semibold shadow-md transform flex items-center justify-center transition duration-200 ease-in-out ${getButtonStyles(bookingStatus)}`}
                             >
-                                Book My Slot
-                                <svg xmlns="http://www.w3.org/2000/svg" className="lg:w-5 lg:h-6 xl:w-6 xl:h-6 ml-1 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
-                                </svg>
+
+                                {bookingStatus === "open" && (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <span>Book My Slot</span>
+                                        <FontAwesomeIcon icon={faArrowRight} className="2xl:text-base lg:text-sm font-bold" />
+                                    </span>
+                                )}
+
+                                {bookingStatus === "booking_closed" && (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <span>Booking Closed</span>
+                                        <FontAwesomeIcon icon={faLock} className="2xl:text-base lg:text-sm -translate-y-[0.1rem]" />
+                                    </span>
+                                )}
+
+                                {bookingStatus === "in_progress" && (
+                                    <span className="flex items-center justify-center gap-1">
+                                        <span>Match is Progress</span>
+                                        <FontAwesomeIcon icon={faBolt} className="2xl:text-base lg:text-sm" />
+                                    </span>
+                                )}
+
+                                {bookingStatus === "completed" && (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <span>Match Completed</span>
+                                        <FontAwesomeIcon icon={faFlagCheckered} className="2xl:text-base lg:text-sm" />
+                                    </span>
+                                )}
                             </button>
                         </div>
+
+
+                        {/* Email confirmation text */}
                         <p className="text-sm lg:text-xs xl:text-sm text-gray-600 mt-5 text-center italic">
                             <FontAwesomeIcon
                                 icon={faEnvelope}
