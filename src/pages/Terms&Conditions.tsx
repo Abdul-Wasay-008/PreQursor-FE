@@ -59,7 +59,7 @@ const TermsAndConditions: React.FC = () => {
                         </h2>
                         <ul className="list-disc pl-6 mt-2 leading-loose">
                             <li>All match entry fees must be paid using your <span className="font-semibold">PQ Wallet.</span> Funds must be manually deposited and verified before entering matches.</li>
-                            <li className="text-red-500 font-semibold">PQ takes a 30% commission from each match entry fee.</li>
+                            <li className="text-red-500 font-semibold">PQ retains approximately 50% of the total entry fee from each match to cover platform operations, while the remaining amount is allocated to the prize pool.</li>
                             <li className="text-red-500 font-semibold">No refunds will be provided for completed matches.</li>
                         </ul>
                     </section>
