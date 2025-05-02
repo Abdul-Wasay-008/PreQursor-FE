@@ -309,7 +309,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                                 <hr className="border-t border-gray-300 my-1 col-span-2" />
 
                                 <div className="flex justify-center font-semibold">Prize Pool:</div>
-                                <div className="flex justify-center">{match.prize}</div>
+                                <div className="flex justify-center">{match.prize} PKR</div>
 
                                 {/* Prize Pool Section */}
                                 <div className="col-span-2 p-4 rounded-lg bg-lightOrange shadow-inner mt-4">
