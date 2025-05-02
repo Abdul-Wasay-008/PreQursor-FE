@@ -42,7 +42,7 @@ const DashNavbar: React.FC = () => {
                 </nav>
 
                 {/* Mobile Menu */}
-                {mobileMenuOpen && (
+                {/* {mobileMenuOpen && (
                     <div className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
                         {["Dashboard", "Wallet", "Enrolled Matches", "Match History", "PQ Hub"].map((item) => (
                             <Link
@@ -52,6 +52,26 @@ const DashNavbar: React.FC = () => {
                                 onClick={() => setMobileMenuOpen(false)} // Close menu on link click
                             >
                                 {item}
+                            </Link>
+                        ))}
+                    </div>
+                )} */}
+                {mobileMenuOpen && (
+                    <div data-aos="fade" className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
+                        {[
+                            { label: "Dashboard", path: "/dashboard" },
+                            { label: "Wallet", path: "/wallet" },
+                            { label: "Enrolled Matches", path: "/enrolled-matches" },
+                            { label: "Match History", path: "/match-history" },
+                            { label: "PQ Hub", path: "/pqhub" }, // ✅ correct fixed path
+                        ].map(({ label, path }) => (
+                            <Link
+                                key={label}
+                                to={path}
+                                className="block py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
+                                onClick={() => setMobileMenuOpen(false)} // Close menu on link click
+                            >
+                                {label}
                             </Link>
                         ))}
                     </div>
@@ -90,7 +110,7 @@ const DashNavbar: React.FC = () => {
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300"><Link to="/societies">PQ Hub</Link></span>
+                                <span className="relative z-10 active:text-gray-300"><Link to="/pqhub">PQ Hub</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
                             {/* <li className="relative cursor-pointer group">

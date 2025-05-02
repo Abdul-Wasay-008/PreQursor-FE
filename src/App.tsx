@@ -13,7 +13,7 @@ import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
 import EnrolledMatches from './pages/EnrolledMatches';
 import MatchHistory from './pages/MatchHistory';
-import Societies from './pages/Societies';
+import PQHub from './pages/PQHub';
 import ProtectedRoutes from './utils/ProtectedRoute';
 import RewardsSystem from './pages/RewardsSystem';
 import FooterLanding from './components/FooterLanding';
@@ -85,7 +85,7 @@ function App() {
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/enrolled-matches" element={<EnrolledMatches />} />
             <Route path="/match-history" element={<MatchHistory />} />
-            <Route path="/societies" element={<Societies />} />
+            <Route path="/pqhub" element={<PQHub />} />
           </Route>
         </Routes>
       </BrowserRouter>

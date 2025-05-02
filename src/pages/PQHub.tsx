@@ -1,7 +1,7 @@
 import React from "react";
 import DashNavbar from "../components/DashNavbar";
 
-const Societies: React.FC = () => {
+const PQHub: React.FC = () => {
     return (
         <div className="font-poppins relative min-h-screen">
             {/* Navigation Bar */}
@@ -34,4 +34,4 @@ const Societies: React.FC = () => {
     );
 };
 
-export default Societies;
+export default PQHub;
