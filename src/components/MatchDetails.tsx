@@ -126,7 +126,7 @@ const MatchDetails: React.FC = () => {
                     bookingStatus = "completed";
                 } else if (now >= matchStart) {
                     bookingStatus = "in_progress";
-                } else if (now >= matchStartMinus30Min) {
+                } else if (now >= matchStartMinus30Min || match.availableSlots <= 0) {
                     bookingStatus = "booking_closed";
                 } else {
                     bookingStatus = "open";
