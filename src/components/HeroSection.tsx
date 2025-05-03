@@ -611,13 +611,13 @@
 // }
 
 // export default HeroSection;
-import React, { useEffect, useState } from "react";
+import React, { } from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAward } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
-import PromoModal from "./PromoModal";
+// import PromoModal from "./PromoModal";
 import CrosshairCursor from "./CrosshairCursor";
 
 const HeroSection: React.FC = () => {
@@ -642,25 +642,25 @@ const HeroSection: React.FC = () => {
     };
 
     //Promo code
-    const [showPromo, setShowPromo] = useState(false);
+    // const [showPromo, setShowPromo] = useState(false);
 
-    useEffect(() => {
-        // TEST MODE: Always show for now
-        setShowPromo(true);
+    // useEffect(() => {
+    //     // TEST MODE: Always show for now
+    //     setShowPromo(true);
       
-        // Original logic (enable later)
-        // const hasSeen = localStorage.getItem("seenPromo");
-        // if (!hasSeen) {
-        //   setShowPromo(true);
-        //   localStorage.setItem("seenPromo", "true");
-        // }
-      }, []);
+    //     // Original logic (enable later)
+    //     // const hasSeen = localStorage.getItem("seenPromo");
+    //     // if (!hasSeen) {
+    //     //   setShowPromo(true);
+    //     //   localStorage.setItem("seenPromo", "true");
+    //     // }
+    //   }, []);
       
 
     return (
         <div>
             {/* Promo code */}
-            {showPromo && <PromoModal onClose={() => setShowPromo(false)} />}
+            {/* {showPromo && <PromoModal onClose={() => setShowPromo(false)} />} */}
             {/* Mobiles and Tablets View */}
             <div className="lg:hidden">
                 <div className="relative w-full h-screen font-poppins overflow-hidden" style={{ height: "85vh" }}>
@@ -1064,7 +1064,7 @@ const HeroSection: React.FC = () => {
             >
                 <CrosshairCursor />
                 {/* Promo code */}
-                {showPromo && <PromoModal onClose={() => setShowPromo(false)} />}
+                {/* {showPromo && <PromoModal onClose={() => setShowPromo(false)} />} */}
                 {/* Opacity for the bg pattern */}
                 <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
                 {/* Landing page content */}
