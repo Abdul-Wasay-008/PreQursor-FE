@@ -262,6 +262,22 @@ const Signup: React.FC = () => {
                             </button>
                         </div>
 
+                        <div className="text-red-500 text-justify">* Please enter a valid phone number linked to your <span className="font-semibold">JazzCash</span> or <span className="font-semibold">Easypaisa</span> account. PreQursor is not responsible for any delays in reward transfers due to an incorrect phone number or wallet type.</div>
+
+                        {/* Confirmation Checkbox */}
+                        <div className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                id="confirmRead"
+                                checked={isChecked}
+                                onChange={handleCheckboxChange}
+                                className="h-4 w-4 align-middle accent-orangered border-gray-600 cursor-pointer outline-none"
+                            />
+                            <label htmlFor="confirmRead" className="text-sm text-gray-300 md:text-base">
+                                I have read and understood the terms.
+                            </label>
+                        </div>
+
                         {/* Signup Button */}
                         <button
                             type="submit"
@@ -281,21 +297,6 @@ const Signup: React.FC = () => {
                             >
                                 Login here
                             </span>
-                        </div>
-                        <div className="text-red-500 text-justify">* Please enter a valid phone number linked to your <span className="font-semibold">JazzCash</span> or <span className="font-semibold">Easypaisa</span> account. PreQursor is not responsible for any delays in reward transfers due to an incorrect phone number or wallet type.</div>
-
-                        {/* Confirmation Checkbox */}
-                        <div className="flex items-center space-x-2">
-                            <input
-                                type="checkbox"
-                                id="confirmRead"
-                                checked={isChecked}
-                                onChange={handleCheckboxChange}
-                                className="h-4 w-4 align-middle accent-orangered border-gray-600 cursor-pointer outline-none"
-                            />
-                            <label htmlFor="confirmRead" className="text-sm text-gray-300 md:text-base">
-                                I have read and understood the terms.
-                            </label>
                         </div>
                     </form>
                 </div>

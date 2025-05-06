@@ -23,6 +23,10 @@ import RefundPolicy from './pages/RefundPolicy';
 import PaymentMethod from './pages/PaymentMethod';
 import PaymentStatus from './pages/PaymentStatus';
 import Wallet from './pages/Wallet';
+import AdminLogin from './pages/Admin/AdminLogin';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // carousel Setup (for small devices only)
 import "slick-carousel/slick/slick.css";
@@ -60,10 +64,13 @@ function App() {
   return (
     <div className="App overflow-hidden">
       <BrowserRouter>
+      {/* Toast controller */}
+      <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
@@ -86,6 +93,7 @@ function App() {
             <Route path="/enrolled-matches" element={<EnrolledMatches />} />
             <Route path="/match-history" element={<MatchHistory />} />
             <Route path="/pqhub" element={<PQHub />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
