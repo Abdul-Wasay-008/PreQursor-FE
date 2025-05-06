@@ -90,8 +90,8 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                                 <div className="flex justify-center">{match.battleType}</div>
                                 <hr className="border-t border-gray-300 my-1 col-span-2" />
 
-                                <div className="flex justify-center font-semibold">Slots Remaining:</div>
-                                <div className={`flex justify-center ${slotsColor}`}>{match.availableSlots}/{match.maxSlots}</div>
+                                <div className="flex justify-center font-semibold">Slots Booked:</div>
+                                <div className={`flex justify-center ${slotsColor}`}>{match.maxSlots - match.availableSlots}/{match.maxSlots}</div>
                                 <hr className="border-t border-gray-300 my-1 col-span-2" />
 
                                 <div className="flex justify-center font-semibold">Entry Fee:</div>
@@ -209,7 +209,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                                 <h3 className="text-xl xl:text-2xl 2xl:text-3xl font-semibold text-darkCharcoal">{match.gameName}</h3>
                                 <p className="text-sm xl:text-base 2xl:text-lg text-gray-500">{match.map} | {match.battleType} | {match.server}</p>
                             </div>
-                            <div className={`text-sm xl:text-base font-medium ${slotsColor}`}>{match.availableSlots}/{match.maxSlots} Slots Left</div>
+                            <div className={`text-sm xl:text-base font-medium ${slotsColor}`}>{match.maxSlots - match.availableSlots}/{match.maxSlots} Slots Booked</div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm mb-4 text-center">
