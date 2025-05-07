@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 type PromoModalProps = {
     onClose: () => void;
@@ -29,30 +29,38 @@ const PromoModal: React.FC<PromoModalProps> = ({ onClose }) => {
 
                 <div className="flex flex-col items-center space-y-4">
                     <h2 className="text-2xl font-medium text-center leading-snug">
-                        <span className="font-orbitron text-orangered leading-relaxed">PreQursor </span>First Free Match is now LIVE!
+                        <span className="font-orbitron text-orangered leading-relaxed">PreQursor </span>18th May Match Postponed
                     </h2>
 
-                    <p className="text-sm lg:text-base text-center text-white/80 mb-2">
-                        PUBG Mobile – Erangel – Solo Battle
+                    <p className="text-base lg:text-lg text-center text-red-500 mb-2">
+                        National Crisis Alert 🚨
                     </p>
 
-                    <p className="text-lg text-center">
+                    {/* <p className="text-lg text-center">
                         💰 <span className="text-orange-400 font-semibold">Rs. 5,000</span> Prize Pool
+                    </p> */}
+
+                    <p className="text-lg text-justify">
+                        Due to the ongoing national crisis, our 18th May Erangle Match has been postponed. The safety and well-being of our players and community are our top priority. <span className="font-bold">Stay tuned for further updates.</span>
                     </p>
 
-                    <div className="space-y-2 text-sm md:text-base w-full">
+                    {/* <div className="space-y-2 text-sm md:text-base w-full">
                         <p>1️ Login or Sign up</p>
                         <p>2️ Add your In-Game ID</p>
                         <p>3️ Create a Team & Register for the Match</p>
-                    </div>
+                    </div> */}
 
-                    <div className="pt-4">
+                    {/* <div className="pt-4">
                         <Link to="/dashboard">
                             <button className="bg-orangered hover:bg-transparent hover:text-white border border-transparent hover:border-orangered text-white px-6 py-2 rounded-full font-semibold transition">
                                 Register Now
                             </button>
                         </Link>
-                    </div>
+                    </div> */}
+
+                    <p className="text-lg lg:text-xl text-center font-semibold text-green-500 mb-2">
+                        Pakistan Zindabad 🇵🇰
+                    </p>
                 </div>
             </div>
         </div>

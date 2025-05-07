@@ -127,13 +127,14 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
 
                             <div className="flex items-center justify-center mt-4">
                                 <button
-                                    disabled={bookingStatus !== "open"}
+                                    disabled
+                                    // disabled={bookingStatus !== "open"}
                                     onClick={bookingStatus === "open" ? handleOpenModal : undefined}
                                     className={`w-full text-sm font-bold py-2 md:py-3 md:w-[70%] px-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 ${getButtonStyles(bookingStatus)}`}
                                 >
                                     {bookingStatus === "open" && (
                                         <>
-                                            <span>Book My Slot</span>
+                                            <span>Match Postponed</span>
                                             <FontAwesomeIcon icon={faArrowRight} className="text-xs" />
                                         </>
                                     )}
@@ -246,14 +247,16 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                         {/*Button*/}
                         <div className="flex justify-center mt-6">
                             <button
-                                disabled={bookingStatus !== "open"}
+                                disabled
+                                // disabled={bookingStatus !== "open"}
                                 onClick={bookingStatus === "open" ? handleOpenModal : undefined}
                                 className={`py-2 px-5 2xl:text-base lg:text-sm font-semibold shadow-md transform flex items-center justify-center transition duration-200 ease-in-out ${getButtonStyles(bookingStatus)}`}
                             >
 
                                 {bookingStatus === "open" && (
                                     <span className="flex items-center justify-center gap-2">
-                                        <span>Book My Slot</span>
+                                        {/* <span>Book My Slot</span> */}
+                                        <span>Match Postponed</span>
                                         <FontAwesomeIcon icon={faArrowRight} className="2xl:text-base lg:text-sm font-bold" />
                                     </span>
                                 )}
