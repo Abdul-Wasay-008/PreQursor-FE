@@ -111,7 +111,7 @@ const AdminDashboard: React.FC = () => {
                                     <td className="px-6 py-4">{match.roomId || "—"}</td>
                                     <td className="px-6 py-4">{match.roomName || "—"}</td>
                                     <td className="px-6 py-4">{match.roomPassword}</td>
-                                    <td className="px-6 py-4">{match.availableSlots}/{match.maxSlots}</td>
+                                    <td className="px-6 py-4">{match.maxSlots - match.availableSlots}/{match.maxSlots}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${match.status === 'waiting' ? 'bg-yellow-600' :
                                             match.status === 'published' ? 'bg-green-600' :

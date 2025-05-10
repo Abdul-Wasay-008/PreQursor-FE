@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faBell, faTimes } from '@fortawesome/free-solid-svg-icons';
-import NotificationModal from "./NotificationModal";
+import { faBars, faUser, faTimes } from '@fortawesome/free-solid-svg-icons';
+import UserProfileModal from "./UserProfileModal";
 import { Link } from "react-router-dom";
 
 const DashNavbar: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isNotificationModalOpen, setIsNotificationModalOpen] = useState(false);
+    const [isUserProfileModalOpen, setIsUserProfileModalOpen] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -27,10 +27,10 @@ const DashNavbar: React.FC = () => {
                     {/* Icons (Bell and Hamburger) */}
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon
-                            icon={faBell}
+                            icon={faUser}
                             className="text-xl"
                             aria-label="Notifications"
-                            onClick={() => setIsNotificationModalOpen(true)}
+                            onClick={() => setIsUserProfileModalOpen(true)}
                         />
                         <FontAwesomeIcon
                             icon={mobileMenuOpen ? faTimes : faBars}
@@ -41,21 +41,6 @@ const DashNavbar: React.FC = () => {
                     </div>
                 </nav>
 
-                {/* Mobile Menu */}
-                {/* {mobileMenuOpen && (
-                    <div className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
-                        {["Dashboard", "Wallet", "Enrolled Matches", "Match History", "PQ Hub"].map((item) => (
-                            <Link
-                                key={item}
-                                to={`/${item.toLowerCase().replace(/\s/g, '-')}`} // Route path in lowercase with dashes
-                                className="block py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
-                                onClick={() => setMobileMenuOpen(false)} // Close menu on link click
-                            >
-                                {item}
-                            </Link>
-                        ))}
-                    </div>
-                )} */}
                 {mobileMenuOpen && (
                     <div data-aos="fade" className="lg:hidden bg-white text-orangered shadow-lg mt-2 py-2 w-full">
                         {[
@@ -63,7 +48,7 @@ const DashNavbar: React.FC = () => {
                             { label: "Wallet", path: "/wallet" },
                             { label: "Enrolled Matches", path: "/enrolled-matches" },
                             { label: "Match History", path: "/match-history" },
-                            { label: "PQ Hub", path: "/pqhub" }, // ✅ correct fixed path
+                            { label: "PQ Hub", path: "/pqhub" }, 
                         ].map(({ label, path }) => (
                             <Link
                                 key={label}
@@ -77,9 +62,9 @@ const DashNavbar: React.FC = () => {
                     </div>
                 )}
 
-                {/* Modal for Adding Team */}
-                {isNotificationModalOpen && (
-                    <NotificationModal onClose={() => setIsNotificationModalOpen(false)} />
+                {/* Modal for opening profile */}
+                {isUserProfileModalOpen && (
+                    <UserProfileModal onClose={() => setIsUserProfileModalOpen(false)} />
                 )}
             </div>
 
@@ -113,24 +98,21 @@ const DashNavbar: React.FC = () => {
                                 <span className="relative z-10 active:text-gray-300"><Link to="/pqhub">PQ Hub</Link></span>
                                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                             </li>
-                            {/* <li className="relative cursor-pointer group">
-                                <span className="relative z-10 active:text-gray-300">Marketplace</span>
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                            </li> */}
-                            {/* Notification Icon */}
+
+                            {/* user Icon */}
                             <div className="relative">
                                 <FontAwesomeIcon
-                                    icon={faBell}
-                                    className="text-xl hover:text-orange transition-colors duration-300 cursor-pointer"
+                                    icon={faUser}
+                                    className="text-2xl hover:text-orange transition-colors duration-300 cursor-pointer"
                                     aria-label="Notifications"
-                                    onClick={() => setIsNotificationModalOpen(true)}
+                                    onClick={() => setIsUserProfileModalOpen(true)}
                                 />
                             </div>
                         </ul>
                     </nav>
-                    {/* Modal for Notificatons */}
-                    {isNotificationModalOpen && (
-                        <NotificationModal onClose={() => setIsNotificationModalOpen(false)} />
+                    {/* Modal for User Profile */}
+                    {isUserProfileModalOpen && (
+                        <UserProfileModal onClose={() => setIsUserProfileModalOpen(false)} />
                     )}
                 </div>
             </div>

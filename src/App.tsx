@@ -64,8 +64,8 @@ function App() {
   return (
     <div className="App overflow-hidden">
       <BrowserRouter>
-      {/* Toast controller */}
-      <ToastContainer position="top-right" autoClose={3000} />
+        {/* Toast controller */}
+        <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
@@ -76,7 +76,7 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/rewards-system" element={<RewardsSystem />} />
           <Route path="/terms&conditions" element={<TermsAndConditions />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/paymentmethod" element={<PaymentMethod />} />
           <Route path="/payment/status" element={<PaymentStatus />} />

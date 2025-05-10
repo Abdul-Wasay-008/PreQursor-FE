@@ -50,7 +50,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
             <div className="px-4 py-8 font-poppins text-darkCharcoal bg-white shadow-md rounded-xl lg:hidden">
                 <div className="relative flex flex-col">
                     {/* Glowing Effect */}
-                    <div className="absolute inset-0 rounded-xl border border-transparent shadow-[0_0_20px_rgba(255,112,67,1)]"></div>
+                    <div className="absolute inset-0 border border-gray-200 rounded-2xl shadow-lg shadow-gray-400"></div>
 
                     {/* Content */}
                     <div className="relative z-10 flex flex-col">
@@ -113,7 +113,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                                                     {/* Trophy Icon */}
                                                     <FontAwesomeIcon
                                                         icon={faTrophy}
-                                                        className="text-yellow-500"
+                                                        className="text-yellow-500 text-base"
                                                     />
                                                     <span className="w-12 text-right">{prize.place}:</span>
                                                 </div>
@@ -186,9 +186,9 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
 
             {/* Laptop and 4K view */}
             <div className="hidden lg:block mt-10 2xl:mt-12 font-poppins">
-                <div className="hidden lg:flex relative shadow-lg rounded-2xl w-full max-w-[53rem] xl:max-w-[64rem] 2xl:max-w-[79rem] ml-auto mr-auto">
-                    {/* Glowing Effect */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent shadow-[0_0_20px_rgba(255,112,67,1)]"></div>
+            <div className="hidden lg:flex relative shadow-lg shadow-gray-400/50 border border-gray-200 rounded-2xl w-full max-w-[53rem] xl:max-w-[64rem] 2xl:max-w-[79rem] ml-auto mr-auto bg-white">
+
+
                     {/* Image Section */}
                     <div className="relative w-1/3 z-10 overflow-hidden rounded-tl-2xl rounded-bl-2xl">
                         <img
