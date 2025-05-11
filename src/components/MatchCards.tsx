@@ -47,9 +47,9 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
     return (
         <div data-aos="fade-up">
             {/* Mobile and tablet view */}
-            <div className="px-4 py-8 font-poppins text-darkCharcoal bg-white shadow-md rounded-xl lg:hidden">
+            <div className="px-4 py-8 font-poppins text-darkCharcoal bg-white rounded-xl lg:hidden">
                 <div className="relative flex flex-col">
-                    {/* Glowing Effect */}
+                    {/* Border Effect */}
                     <div className="absolute inset-0 border border-gray-200 rounded-2xl shadow-lg shadow-gray-400"></div>
 
                     {/* Content */}
@@ -127,14 +127,13 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
 
                             <div className="flex items-center justify-center mt-4">
                                 <button
-                                    disabled
-                                    // disabled={bookingStatus !== "open"}
+                                    disabled={bookingStatus !== "open"}
                                     onClick={bookingStatus === "open" ? handleOpenModal : undefined}
                                     className={`w-full text-sm font-bold py-2 md:py-3 md:w-[70%] px-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 ${getButtonStyles(bookingStatus)}`}
                                 >
                                     {bookingStatus === "open" && (
                                         <>
-                                            <span>Match Postponed</span>
+                                            <span>Book My Slot</span>
                                             <FontAwesomeIcon icon={faArrowRight} className="text-xs" />
                                         </>
                                     )}
@@ -247,16 +246,14 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                         {/*Button*/}
                         <div className="flex justify-center mt-6">
                             <button
-                                disabled
-                                // disabled={bookingStatus !== "open"}
+                                disabled={bookingStatus !== "open"}
                                 onClick={bookingStatus === "open" ? handleOpenModal : undefined}
                                 className={`py-2 px-5 2xl:text-base lg:text-sm font-semibold shadow-md transform flex items-center justify-center transition duration-200 ease-in-out ${getButtonStyles(bookingStatus)}`}
                             >
 
                                 {bookingStatus === "open" && (
                                     <span className="flex items-center justify-center gap-2">
-                                        {/* <span>Book My Slot</span> */}
-                                        <span>Match Postponed</span>
+                                        <span>Book My Slot</span>
                                         <FontAwesomeIcon icon={faArrowRight} className="2xl:text-base lg:text-sm font-bold" />
                                     </span>
                                 )}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
 import {
     faCalendarDays,
     faClock,
@@ -54,8 +55,17 @@ const BookingModal: React.FC<BookingModalProps> = ({ onClose, matchId }) => {
                 throw new Error(errorData.message || "Booking failed");
             }
 
-            const data = await response.json();
-            alert(data.message); // Show success message in an alert for now
+            // const data = await response.json();
+            // ✅ Triggering React Toast for Success
+            toast.success("Slot Booked Successfully!", {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "colored",
+            });
         } catch (error) {
             if (error instanceof Error) {
                 setErrorMessage(error.message); // Set error message
