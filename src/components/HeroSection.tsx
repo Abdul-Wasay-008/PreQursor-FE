@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React, { } from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAward } from "@fortawesome/free-solid-svg-icons";
@@ -6,15 +6,18 @@ import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 // import PromoModal from "./PromoModal";
 import CrosshairCursor from "./CrosshairCursor";
+import ReactPixel from "react-facebook-pixel";
 
 const HeroSection: React.FC = () => {
     const navigate = useNavigate();
 
     const handleLoginClick = () => {
+        ReactPixel.track('Lead');
         navigate("/login");
     };
 
     const handleRewardsPage = () => {
+        ReactPixel.track('ViewContent')
         navigate("/rewards-system");
     }
 
@@ -35,7 +38,7 @@ const HeroSection: React.FC = () => {
     //     // TEST MODE: Always show for now
     //     setShowPromo(true);
     //   }, []);
-      
+
 
     return (
         <div>
@@ -86,6 +89,12 @@ const HeroSection: React.FC = () => {
                                     >
                                         <button
                                             data-aos="fade-right"
+                                            onClick={() => {
+                                                ReactPixel.track('ViewContent', {
+                                                    content_name: 'How it Works',
+                                                    content_category: 'Landing Page Section',
+                                                });
+                                            }}
                                             className="text-white z-50 mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
                                         >
                                             How it Works

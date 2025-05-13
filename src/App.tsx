@@ -27,6 +27,7 @@ import AdminLogin from './pages/Admin/AdminLogin';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactPixel from 'react-facebook-pixel';
 
 // carousel Setup (for small devices only)
 import "slick-carousel/slick/slick.css";
@@ -54,11 +55,22 @@ const HomePage = () => {
   );
 };
 
+const options = {
+  autoConfig: true,
+  debug: false,
+};
+
 function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
+  }, []);
+
+  //FB Pixel
+  useEffect(() => {
+    ReactPixel.init('1102383725265418', undefined, options);
+    ReactPixel.pageView(); // Track initial page load
   }, []);
 
   return (

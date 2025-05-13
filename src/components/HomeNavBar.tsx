@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faBars, faTimes, faSignInAlt, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
+import ReactPixel from "react-facebook-pixel";
 
 const HomeNavBar: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,11 +21,17 @@ const HomeNavBar: React.FC = () => {
     const navigate = useNavigate();
     const handleLoginClick = () => {
         setDropdownOpen(false);
+        ReactPixel.track('Lead', {
+            content_name: 'Navbar Login',
+        });
         navigate("/login");
     };
 
     const handleSignupClick = () => {
         setDropdownOpen(false);
+        ReactPixel.track('Lead', {
+            content_name: 'Navbar Signup',
+        });
         navigate("/signup");
     };
 
@@ -75,6 +82,11 @@ const HomeNavBar: React.FC = () => {
                                 offset={0}
                                 duration={600}
                                 className="relative group"
+                                onClick={() => {
+                                    ReactPixel.track('ViewContent', {
+                                        content_name: item,
+                                    });
+                                }}
                             >
                                 <div className="relative group" key={item}>
                                     <span className="text-lg font-medium hover:cursor-pointer active:text-gray-300 transition duration-300">
@@ -151,7 +163,12 @@ const HomeNavBar: React.FC = () => {
                                 offset={-250}
                                 duration={600}
                                 className="block py-2 px-4 hover:bg-gray-200 cursor-pointer transition-colors text-center border-b last:border-none"
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={() => {
+                                    ReactPixel.track("ViewContent", {
+                                        content_name: `${item} (Mobile Menu)`
+                                    });
+                                    setMobileMenuOpen(false);
+                                }}
                             >
                                 {item}
                             </Link>

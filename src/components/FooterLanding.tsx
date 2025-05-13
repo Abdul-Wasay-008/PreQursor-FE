@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ReactPixel from "react-facebook-pixel"
 
 const FooterLanding: React.FC = () => {
     return (
@@ -13,10 +14,45 @@ const FooterLanding: React.FC = () => {
                 </div>
             </div>
             <div className="flex flex-col items-center font-poppins my-6 z-10 space-y-4">
-                <Link to="terms&conditions" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Terms and Conditions</Link>
-                <Link to="privacypolicy" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Privacy Policy</Link>
-                <Link to="refundpolicy" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Refund and Return</Link>
-                <Link to="paymentmethod" className="hover:text-gray-400 duration-150 active:underline cursor-pointer">Payment Method</Link>
+                <Link
+                    to="terms&conditions"
+                    onClick={() =>
+                        ReactPixel.track("ViewContent", { content_name: "Terms and Conditions" })
+                    }
+                    className="hover:text-gray-400 duration-150 active:underline cursor-pointer"
+                >
+                    Terms and Conditions
+                </Link>
+
+                <Link
+                    to="privacypolicy"
+                    onClick={() =>
+                        ReactPixel.track("ViewContent", { content_name: "Privacy Policy" })
+                    }
+                    className="hover:text-gray-400 duration-150 active:underline cursor-pointer"
+                >
+                    Privacy Policy
+                </Link>
+
+                <Link
+                    to="refundpolicy"
+                    onClick={() =>
+                        ReactPixel.track("ViewContent", { content_name: "Refund and Return" })
+                    }
+                    className="hover:text-gray-400 duration-150 active:underline cursor-pointer"
+                >
+                    Refund and Return
+                </Link>
+
+                <Link
+                    to="paymentmethod"
+                    onClick={() =>
+                        ReactPixel.track("ViewContent", { content_name: "Payment Method" })
+                    }
+                    className="hover:text-gray-400 duration-150 active:underline cursor-pointer"
+                >
+                    Payment Method
+                </Link>
             </div>
             <div className="text-white text-center pt-8 font-poppins">© 2025 PreQursor. All rights reserved.</div>
         </footer>
