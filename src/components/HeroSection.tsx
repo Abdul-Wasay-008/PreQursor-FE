@@ -214,17 +214,34 @@ const HeroSection: React.FC = () => {
                                     </p>
                                     <button
                                         data-aos="fade-left"
+                                        onClick={handleLoginClick}
                                         className="text-white bg-orangered mt-10 mb-2 text-base border border-transparent py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border active:border-orangered z-50"
                                     >
                                         <FontAwesomeIcon icon={faUser} className="mr-2" />
                                         Login
                                     </button>
-                                    <button
-                                        data-aos="fade-right"
-                                        className="text-white mt-3 mb-2 text-base z-50 font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                    <Link
+                                        key="howitworks"
+                                        to="howitworks"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0}
+                                        duration={600}
+                                        className="relative group"
                                     >
-                                        How it Works
-                                    </button>
+                                        <button
+                                            data-aos="fade-right"
+                                            onClick={() => {
+                                                ReactPixel.track('ViewContent', {
+                                                    content_name: 'How it Works',
+                                                    content_category: 'Landing Page Section',
+                                                });
+                                            }}
+                                            className="text-white z-50 mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                        >
+                                            How it Works
+                                        </button>
+                                    </Link>
                                     <div style={{ position: "relative", display: "inline-block" }}>
                                         <button
                                             data-aos="fade-up"
@@ -339,17 +356,34 @@ const HeroSection: React.FC = () => {
                                     </p>
                                     <button
                                         data-aos="fade-left"
+                                        onClick={handleLoginClick}
                                         className="text-white bg-orangered mt-10 mb-2 text-base border border-transparent py-2 px-7 rounded-3xl font-bold active:bg-transparent active:border active:border-orangered z-50"
                                     >
                                         <FontAwesomeIcon icon={faUser} className="mr-2" />
                                         Login
                                     </button>
-                                    <button
-                                        data-aos="fade-right"
-                                        className="text-white mt-3 mb-2 text-base z-50 font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                    <Link
+                                        key="howitworks"
+                                        to="howitworks"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0}
+                                        duration={600}
+                                        className="relative group"
                                     >
-                                        How it Works
-                                    </button>
+                                        <button
+                                            data-aos="fade-right"
+                                            onClick={() => {
+                                                ReactPixel.track('ViewContent', {
+                                                    content_name: 'How it Works',
+                                                    content_category: 'Landing Page Section',
+                                                });
+                                            }}
+                                            className="text-white z-50 mt-3 mb-2 text-base font-semibold border border-orangered py-2 px-7 rounded-3xl active:bg-orangered"
+                                        >
+                                            How it Works
+                                        </button>
+                                    </Link>
                                     <div style={{ position: "relative", display: "inline-block" }}>
                                         <button
                                             data-aos="fade-up"
