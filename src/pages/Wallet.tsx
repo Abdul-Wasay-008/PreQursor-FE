@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { User, Dock, ArrowDown, ArrowUp, Landmark, Copy, X } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify"
 
 function WalletPage() {
     const [walletBalance, setWalletBalance] = useState("0 PKR");
@@ -120,14 +121,14 @@ function WalletPage() {
             }
 
             if (response.ok) {
-                alert(data?.message || "Screenshot uploaded successfully.");
+                toast.success(data?.message || "Screenshot uploaded successfully.");
                 setSelectedFile(null);
             } else {
-                alert(data?.message || "Upload failed. Please try again.");
+                toast.error(data?.message || "Upload failed. Please try again.");
             }
         } catch (error) {
             console.error("❌ Upload failed:", error);
-            alert("Something went wrong. Please try again.");
+            toast.error("Something went wrong. Please try again.");
         } finally {
             setUploading(false); // ✅ Always reset loader
         }
