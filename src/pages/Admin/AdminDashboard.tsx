@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
+import { Link } from "react-router-dom";
 
 interface Match {
     _id: string;
@@ -83,9 +84,19 @@ const AdminDashboard: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0F0F0F] text-white p-8 font-poppins">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-3xl font-bold mb-8">
-                    🎮 <span className="font-orbitron text-orangered">PreQursor</span> Admin Dashboard
-                </h1>
+                <div className="flex justify-between items-center mb-8">
+                    <h1 className="text-3xl font-bold">
+                        🎮 <span className="font-orbitron text-orangered">PreQursor</span> Admin Dashboard
+                    </h1>
+
+                    <Link
+                        to="/admin-deposit-requests"
+                        className="px-4 py-2 bg-orangered hover:bg-orange-600 border border-transparent text-white font-semibold rounded-full shadow transition hover:text-orangered hover:bg-transparent hover:border hover:border-orangered"
+                    >
+                        Deposit Requests
+                    </Link>
+                </div>
+
 
                 <div className="overflow-x-auto rounded-xl shadow border border-gray-700">
                     <table className="min-w-full table-auto text-sm text-left">

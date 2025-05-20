@@ -28,6 +28,7 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReactPixel from 'react-facebook-pixel';
+import AdminDepositReq from './pages/Admin/AdminDepositReq';
 
 // carousel Setup (for small devices only)
 import "slick-carousel/slick/slick.css";
@@ -106,6 +107,7 @@ function App() {
             <Route path="/match-history" element={<MatchHistory />} />
             <Route path="/pqhub" element={<PQHub />} />
             <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/admin-deposit-requests" element={<AdminDepositReq />} />
           </Route>
         </Routes>
       </BrowserRouter>

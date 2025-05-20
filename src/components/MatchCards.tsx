@@ -56,7 +56,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                     <div className="relative z-10 flex flex-col">
                         {/* Game Image */}
                         <img
-                            src="/images/PubgCardImgM.jpeg"
+                            src="/images/LivikM.jpeg"
                             alt="PubgCard"
                             className="object-cover h-48 w-full rounded-t-xl mb-4"  // Set height and width for image
                         />
@@ -230,7 +230,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                         </div>
 
                         {/*Prize Pool Section*/}
-                        <div className="flex justify-between items-center mt-4 bg-lightOrange p-3 rounded-lg lg:pl-6 lg:pr-6 xl:pl-8 xl:pr-8 2xl:pl-10 2xl:pr-10">
+                        <div className="flex justify-evenly items-center mt-4 bg-lightOrange p-3 rounded-lg lg:pl-6 lg:pr-6 xl:pl-8 xl:pr-8 2xl:pl-10 2xl:pr-10">
                             {match.prizePool.map((prize, index) => (
                                 <React.Fragment key={index}>
                                     <div className="flex flex-col items-center">
