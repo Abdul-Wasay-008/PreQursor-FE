@@ -44,10 +44,26 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
         }
     };
 
+    const getMapImage = () => {
+        switch (match.map.toLowerCase()) {
+            case 'erangel':
+                return '/images/PubgCardImgM.jpeg';
+            case 'livik':
+                return '/images/LivikM.jpeg';
+            case 'miramar':
+                return '/images/MiramarM.jpeg';
+            case 'sanhok':
+                return '/images/SanhokM.jpeg';
+            default:
+                return '/images/default-map.jpeg'; // fallback image
+        }
+    };
+
+
     return (
         <div data-aos="fade-up">
             {/* Mobile and tablet view */}
-            <div className="px-4 py-8 font-poppins text-darkCharcoal bg-white rounded-xl lg:hidden">
+            <div className="px-4 py-5 font-poppins text-darkCharcoal bg-white rounded-xl lg:hidden">
                 <div className="relative flex flex-col">
                     {/* Border Effect */}
                     <div className="absolute inset-0 border border-gray-200 rounded-2xl shadow-lg shadow-gray-400"></div>
@@ -56,12 +72,12 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                     <div className="relative z-10 flex flex-col">
                         {/* Game Image */}
                         <img
-                            src="/images/LivikM.jpeg"
+                            src={getMapImage()}
                             alt="PubgCard"
                             className="object-cover h-48 w-full rounded-t-xl mb-4"  // Set height and width for image
                         />
                         <div className="absolute top-3 left-3 bg-gradient-to-r from-red-600 to-orange text-white text-sm font-medium rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
-                            Free
+                            New
                         </div>
                         {/* Match Info Section */}
                         <div className="relative flex-grow border border-transparent bg-white rounded-b-lg p-4">
@@ -184,8 +200,8 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
             </div>
 
             {/* Laptop and 4K view */}
-            <div className="hidden lg:block mt-10 2xl:mt-12 font-poppins">
-            <div className="hidden lg:flex relative shadow-lg shadow-gray-400/50 border border-gray-200 rounded-2xl w-full max-w-[53rem] xl:max-w-[64rem] 2xl:max-w-[79rem] ml-auto mr-auto bg-white">
+            <div className="hidden lg:block mt-5 2xl:mt-8 font-poppins">
+                <div className="hidden lg:flex relative shadow-lg shadow-gray-400/50 border border-gray-200 rounded-2xl w-full max-w-[53rem] xl:max-w-[64rem] 2xl:max-w-[79rem] ml-auto mr-auto bg-white">
 
 
                     {/* Image Section */}
@@ -198,7 +214,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black opacity-50 rounded-bl-2xl"></div>
                         <div className="absolute top-3 left-3 bg-gradient-to-r from-red-600 to-orange text-white text-sm font-semibold rounded-full px-3 py-1 2xl:text-base 2xl:px-4">
-                            Free
+                            New
                         </div>
                     </div>
 
@@ -230,7 +246,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                         </div>
 
                         {/*Prize Pool Section*/}
-                        <div className="flex justify-evenly items-center mt-4 bg-lightOrange p-3 rounded-lg lg:pl-6 lg:pr-6 xl:pl-8 xl:pr-8 2xl:pl-10 2xl:pr-10">
+                        <div className="flex justify-around items-center mt-4 bg-lightOrange p-3 rounded-lg lg:pl-6 lg:pr-6 xl:pl-8 xl:pr-8 2xl:pl-10 2xl:pr-10">
                             {match.prizePool.map((prize, index) => (
                                 <React.Fragment key={index}>
                                     <div className="flex flex-col items-center">

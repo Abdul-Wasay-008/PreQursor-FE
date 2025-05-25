@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         window.scrollTo(0, 0);
     };
     return (
-        <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-10 px-7 text-center">
+        <footer className="bg-darkCharcoal text-white font-poppins pt-10 mt-5 px-7 text-center">
             <div className="flex justify-center mb-10 lg:my-2">
                 <img
                     src="/assets/WebLogo.png"
