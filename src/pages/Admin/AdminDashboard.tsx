@@ -134,7 +134,7 @@ const AdminDashboard: React.FC = () => {
                                     <td className="px-6 py-4">
                                         <button
                                             onClick={() => openModal(match)}
-                                            // disabled={match.status !== 'waiting'}
+                                            disabled={match.status !== 'waiting'}
                                             className={`px-4 py-2 rounded-lg text-white font-semibold transition ${match.status !== 'waiting'
                                                 ? 'bg-gray-500 cursor-not-allowed'
                                                 : 'bg-orangered hover:bg-orange-600'

@@ -163,7 +163,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
 
                                     {bookingStatus === "in_progress" && (
                                         <>
-                                            <span>Match in Progress</span>
+                                            <span>Match In Progress</span>
                                             <FontAwesomeIcon icon={faBolt} className="text-xs" />
                                         </>
                                     )}
@@ -283,7 +283,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
 
                                 {bookingStatus === "in_progress" && (
                                     <span className="flex items-center justify-center gap-1">
-                                        <span>Match is Progress</span>
+                                        <span>Match In Progress</span>
                                         <FontAwesomeIcon icon={faBolt} className="2xl:text-base lg:text-sm" />
                                     </span>
                                 )}
