@@ -50,8 +50,8 @@ const MatchCard: React.FC<MatchCardProps> = ({ match, bookingStatus }) => {
                 return '/images/PubgCardImgM.jpeg';
             case 'livik':
                 return '/images/LivikM.jpeg';
-            case 'miramar':
-                return '/images/MiramarM.jpeg';
+            case 'warehouse':
+                return '/images/warehouse.jpeg';
             case 'sanhok':
                 return '/images/SanhokM.jpeg';
             default:
